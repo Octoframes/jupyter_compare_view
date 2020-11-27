@@ -19,7 +19,7 @@ log.set_verbosity(log.DEBUG)
 log.info('setup.py entered')
 log.info('$PATH=%s' % os.environ['PATH'])
 
-name = 'jupyter-splitview'
+name = 'splitview'
 LONG_DESCRIPTION = 'A splitview widget'
 
 # Get jupyter-splitview version
@@ -33,7 +33,7 @@ jstargets = [
 ]
 
 data_files_spec = [
-    ('share/jupyter/nbextensions/jupyter-splitview', 'jupyter-splitview/static', '*.*'),
+    ('share/jupyter/nbextensions/jupyter-splitview', 'splitview/static', '*.*'),
     ('etc/jupyter/nbconfig/notebook.d', '.', 'jupyter-splitview.json'),
 ]
 

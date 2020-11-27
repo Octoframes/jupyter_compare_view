@@ -1,4 +1,4 @@
-- To release a new version of jupyter-splitview on PyPI:
+- To release a new version of splitview on PyPI:
 
 Update _version.py (set release version, remove 'dev')
 git add the _version.py file and git commit

@@ -6,7 +6,7 @@ build/
 node_modules/
 
 # Compiled javascript
-jupyter-splitview/static/
+splitview/static/
 
 # OS X
 .DS_Store

@@ -33,20 +33,20 @@ Installation
 
 To install use pip:
 
-    $ pip install jupyter-splitview
-    $ jupyter nbextension enable --py --sys-prefix jupyter-splitview
+    $ pip install splitview
+    $ jupyter nbextension enable --py --sys-prefix splitview
 
 To install for jupyterlab
 
-    $ jupyter labextension install jupyter-splitview
+    $ jupyter labextension install splitview
 
 For a development installation (requires npm),
 
     $ git clone https://github.com/kolibril13/jupyter-splitview.git
     $ cd jupyter-splitview
     $ pip install -e .
-    $ jupyter nbextension install --py --symlink --sys-prefix jupyter-splitview
-    $ jupyter nbextension enable --py --sys-prefix jupyter-splitview
+    $ jupyter nbextension install --py --symlink --sys-prefix splitview
+    $ jupyter nbextension enable --py --sys-prefix splitview
     $ jupyter labextension install js
 
 When actively developing your extension, build Jupyter Lab with the command:
