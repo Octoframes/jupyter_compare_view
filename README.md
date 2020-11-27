@@ -3,6 +3,31 @@ jupyter-splitview
 
 A splitview widget
 
+Example of the concept:
+```python
+from skimage import data
+from skimage.util import random_noise
+import matplotlib.pyplot as plt
+import numpy as np
+
+img = data.chelsea()
+noisy_img = random_noise(img, var=0.02)
+
+fig1= plt.figure()
+plt.imshow(img)
+plt.axis('off')
+fig2= plt.figure()
+plt.imshow(noisy_img)
+plt.axis('off')
+
+#new part (does not exist yet):
+from splitview import SplitMapControl
+control = SplitMapControl(left_layer=fig1, right_layer=fig2)
+m.add_control(control)
+m
+```
+![](concept_image.png)
+
 Installation
 ------------
 
