@@ -1,0 +1,6 @@
+recursive-include jupyter-splitview/static *.*
+include jupyter-splitview.json
+
+include LICENSE
+include setup.py
+include pyproject.toml
