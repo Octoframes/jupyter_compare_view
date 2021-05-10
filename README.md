@@ -1,4 +1,4 @@
-jupyter-splitview
+jupyter-splitview NOT YET WORKING
 ===============================
 
 A splitview widget
@@ -31,9 +31,7 @@ m
 Installation
 ------------
 
-To install use pip:
-
-    $ pip install splitview
+To install use pip:  ~~pip install splitview~~ NOT YET WORKING!
     $ jupyter nbextension enable --py --sys-prefix splitview
 
 To install for jupyterlab
