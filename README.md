@@ -1,4 +1,5 @@
 jupyter-splitview NOT YET WORKING
+I don't know if I will continue on this project (Maybe I won't)
 ===============================
 
 A splitview widget
