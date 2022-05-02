@@ -24,7 +24,7 @@ ax2.axis('off')
 ax2.imshow(noisy_img)
 ```
 
-![](concept_image.jpg)
+<img src="concept_image.jpg" style="width: 300px;"/>
 
 Implementation can be found in `splitview_magic.ipynb`.
 Package on pypi will come soon.
