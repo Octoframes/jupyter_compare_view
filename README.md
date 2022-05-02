@@ -1,12 +1,14 @@
-jupyter-splitview 
+Jupyter Splitview
 =================
 
-A cell magic that displays images in splitview using https://github.com/NUKnightLab/juxtapose.
-
-NOTE: Still work in progress, there will be breaking changes
+A cell magic that displays images in splitview using https://github.com/NUKnightLab/juxtapose.  
+*NOTE: Still work in progress, there will be breaking changes.*
  
-
-Here is an example:
+## Installation
+```py
+pip install jupyter-splitview
+```
+## Example
 ```py
 import jupyter_splitview
 ```
@@ -45,7 +47,7 @@ ax1.imshow(array1)
 fig, ax2 = plt.subplots(figsize=(5, 10))
 ax2.imshow(array2)
 ```
-<img src="concept_image2.jpg" style="width: 200px;"/>
+<img src="concept_image2.jpg" style="width: 300px;"/>
 
 
 Tested in JupyterLab.
