@@ -1,14 +1,13 @@
 from base64 import b64decode
-from io import BytesIO, StringIO
+from io import BytesIO
 from pathlib import Path
 
 import PIL
 from IPython.core import magic_arguments
+from IPython.core.display import HTML
 from IPython.core.magic import Magics, cell_magic, magics_class
 from IPython.display import display
 from IPython.utils.capture import capture_output
-from IPython.core.display import HTML
-
 
 @magics_class
 class SplitViewMagic(Magics):
@@ -21,7 +20,7 @@ class SplitViewMagic(Magics):
     )
     @cell_magic
     def splity(self, line, cell):
-        """Saves the png image and the css style for the html page"""
+        """Saves the png image and calls the splitview canvas"""
         args = magic_arguments.parse_argstring(SplitViewMagic.splity, line)
         path = args.path
 
