@@ -1,0 +1,39 @@
+# this document is copied from https://github.com/behackl/combpyter/blob/main/.github/workflows/pypi-publish.yml
+name: Create and publish new release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code  
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Install poetry
+      run: python -m pip install --upgrade poetry
+
+    - name: Build project for distribution
+      run: poetry build
+
+    - name: Create Release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "dist/*"
+        token: ${{ secrets.GITHUB_TOKEN }}
+        draft: false
+        prerelease: false
+
+    - name: Publish to PyPI
+      env:
+        POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
+      run: poetry publish
+
