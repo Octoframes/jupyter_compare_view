@@ -25,3 +25,9 @@ ax2.imshow(noisy_img)
 ```
 
 ![](concept_image.jpg)
+
+Implementation can be found in `splitview_magic.ipynb`.
+Package on pypi will come soon.
+
+Tested in JupyterLab.
+Does not work in VSCode Notebooks.
