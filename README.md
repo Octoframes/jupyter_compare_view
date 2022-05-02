@@ -68,6 +68,13 @@ Formatting with black can be done this way:
 * parameter for default position in percent
 * test the custom path flag.
 
+Idea: Second option without using cell magic:
+```python
+from splitview import Splity # (does not yet exist)
+my_splity = Splity(left_layer=img1, right_layer=img2)
+display(my_splity)
+```
+
 ## Changelog
 ### 0.0.2 (Work in Progress)
 * handeling height
