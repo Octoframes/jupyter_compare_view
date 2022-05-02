@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "jupyter-splitview"
+version = "0.0.1"
+description = "Making before/after image sliders in JupyterLab"
+authors = ["kolibril13 <44469195+kolibril13@users.noreply.github.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+jupyterlab = "^3.3.4"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

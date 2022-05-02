@@ -161,3 +161,6 @@ cython_debug/
 
 # OS X
 .DS_Store
+
+# For poetry
+*.lock
