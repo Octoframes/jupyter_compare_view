@@ -31,3 +31,10 @@ Package on pypi will come soon.
 
 Tested in JupyterLab.
 Does not work in VSCode Notebooks.
+
+
+## Notebook formatting
+Formatting with black can be done this way: 
+1. `pip install 'black[jupyter]'`
+2. `black --python-cell-magics splity splitview_magic.ipynb`
+
