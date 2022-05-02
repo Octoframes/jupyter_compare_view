@@ -32,8 +32,21 @@ ax2.imshow(noisy_img)
 
 <img src="concept_image.jpg" style="width: 300px;"/>
 
-Implementation can be found in `splitview_magic.ipynb`.
-Package on pypi will come soon.
+Another example:
+```py
+%%splity
+import matplotlib.pyplot as plt
+import numpy as np
+
+array1 = np.full((15, 30), 10)
+array2 = np.random.randint(0, 10, size=(15, 30))
+fig, ax1 = plt.subplots(figsize=(5, 10))
+ax1.imshow(array1)
+fig, ax2 = plt.subplots(figsize=(5, 10))
+ax2.imshow(array2)
+```
+<img src="concept_image2.jpg" style="width: 200px;"/>
+
 
 Tested in JupyterLab.
 Does not work in VSCode Notebooks.
@@ -53,3 +66,13 @@ Formatting with black can be done this way:
 * automatically adjust the height parameter with f-strings
 * implement tests, find out how to test a magic class
 * parameter for default position in percent
+* test the custom path flag.
+
+## Changelog
+### 0.0.2 (Work in Progress)
+* handeling height
+* dont save images to disk
+*
+### 0.0.1
+
+* First release
