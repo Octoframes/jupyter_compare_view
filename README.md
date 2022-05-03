@@ -3,7 +3,6 @@ Jupyter Splitview
 
 A cell magic that displays images in splitview using https://github.com/NUKnightLab/juxtapose.  
 *NOTE: Still work in progress, there will be breaking changes.*
- 
 ## Installation
 ```py
 pip install jupyter-splitview
@@ -34,6 +33,8 @@ ax2.imshow(noisy_img)
 
 <img src="concept_image.jpg" style="width: 300px;"/>
 
+Note: The split view widget is still responsive after closing and reopening the notebook without running the cell again.
+
 Another example:
 ```py
 %%splity
@@ -61,8 +62,6 @@ Formatting with black can be done this way:
 
 ## TODOS
 
-* Don't save the images, but maybe chash them somehow?
-    * Can they be phrased as bitestrings to javascript ?
 * Handle cases where n ≠ 2 images.
 * Ship the javascript directly with the package, so no internet connection is required
 * automatically adjust the height parameter with f-strings
