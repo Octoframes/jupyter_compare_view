@@ -1,8 +1,6 @@
 from base64 import b64decode
-from io import BytesIO
 from pathlib import Path
 
-import PIL
 from IPython.core import magic_arguments
 from IPython.core.display import HTML
 from IPython.core.magic import Magics, cell_magic, magics_class
@@ -28,30 +26,19 @@ class SplitViewMagic(Magics):
         with capture_output(stdout=False, stderr=False, display=True) as result:
             self.shell.run_cell(cell)
 
-        # print(result.outputs)
         # save image
-        num = 0
         filenames = []
         for output in result.outputs:
-            # display(output)
             data = output.data
             if "image/png" in data:
-                png_bytes = data["image/png"]
-                if isinstance(png_bytes, str):
-                    png_bytes = b64decode(png_bytes)
-                assert isinstance(png_bytes, bytes)
-                bytes_io = BytesIO(png_bytes)
-                image = PIL.Image.open(bytes_io)
-                filename = path / f"splitview_image_{num}.png"
-                image.save(filename, "png")
-                filenames.append(filename)
-                num += 1
+                png_bytes_data = data["image/png"]                
+                filenames.append(png_bytes_data)
 
         html_code = f"""
         <div class= "outer_layer" style = "position: relative; padding-top: 300px"   >
         <div class="juxtapose" data-startingposition="35%" style = "height: 400px; width: 400px; top: 1%; left: 1%; position: absolute;"  >
-            <img src="{filenames[0].name}" />  <!-- here, the image path is loaded by acceccing it with an f-string, so cool! -->
-            <img src="{filenames[1].name}" />
+            <img src="data:image/jpeg;base64,{filenames[0]}">'
+            <img src="data:image/jpeg;base64,{filenames[1]}">'
         </div>
 
         </div>

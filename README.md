@@ -78,10 +78,13 @@ display(my_splity)
 ```
 
 ## Changelog
-### 0.0.2 (Work in Progress)
+
+
+## 0.0.3 (Work in Progress)
+
 * handeling height
-* dont save images to disk
-*
+### 0.0.2 
+* save images in base64 strings and don't load images to disk (increases package security).
 ### 0.0.1
 
 * First release
