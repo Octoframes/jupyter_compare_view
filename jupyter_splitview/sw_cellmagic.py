@@ -1,5 +1,4 @@
 from base64 import b64decode
-from pathlib import Path
 
 from IPython.core import magic_arguments
 from IPython.core.display import HTML
@@ -12,16 +11,16 @@ from IPython.utils.capture import capture_output
 class SplitViewMagic(Magics):
     @magic_arguments.magic_arguments()
     @magic_arguments.argument(
-        "--path",
+        "--position",
         "-p",
-        default=Path.cwd(),
-        help=("the path where the image will be saved to"),
+        default="50%",
+        help=("the position where the slider starts"),
     )
     @cell_magic
     def splity(self, line, cell):
         """Saves the png image and calls the splitview canvas"""
         args = magic_arguments.parse_argstring(SplitViewMagic.splity, line)
-        path = args.path
+        slider_position = args.position
 
         # save the output
         with capture_output(stdout=False, stderr=False, display=True) as result:
@@ -36,8 +35,8 @@ class SplitViewMagic(Magics):
                 filenames.append(png_bytes_data)
 
         html_code = f"""
-        <div class= "outer_layer" style = "position: relative; padding-top: 300px"   >
-        <div class="juxtapose" data-startingposition="35%" style = "height: 400px; width: 400px; top: 1%; left: 1%; position: absolute;"  >
+        <div class= "outer_layer" style = "position: relative; padding-top: 210px"   >
+        <div class="juxtapose" data-startingposition="{slider_position}" style = "height: 200px; width: auto; top: 1%; left: 1%; position: absolute;"  >
             <img src="data:image/jpeg;base64,{filenames[0]}">'
             <img src="data:image/jpeg;base64,{filenames[1]}">'
         </div>

@@ -37,7 +37,7 @@ Note: The split view widget is still responsive after closing and reopening the 
 
 Another example:
 ```py
-%%splity
+%%splity --position 73%
 import matplotlib.pyplot as plt
 import numpy as np
 

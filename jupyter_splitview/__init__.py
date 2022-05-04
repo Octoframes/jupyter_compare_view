@@ -5,5 +5,10 @@ import pkg_resources
 __version__: str = pkg_resources.get_distribution(__name__).version
 
 print(f"Jupyter Splitview v{__version__}")
-ipy = get_ipython()
-ipy.register_magics(SplitViewMagic)
+
+try:
+    ipy = get_ipython()
+    ipy.register_magics(SplitViewMagic)
+
+except AttributeError:
+    print("Can not load SplitViewMagic because this is not a notebook")
