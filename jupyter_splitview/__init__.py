@@ -4,7 +4,6 @@ import pkg_resources
 
 __version__: str = pkg_resources.get_distribution(__name__).version
 
-print(f"Jupyter Splitview v{__version__}")
   
 def load_ipython_extension(ipython):
   print(f"Registering Jupyter Splitview v{__version__}")
