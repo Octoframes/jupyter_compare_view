@@ -35,13 +35,12 @@ class SplitViewMagic(Magics):
                 filenames.append(png_bytes_data)
 
         html_code = f"""
-        <div class= "outer_layer" style = "position: relative; padding-top: 210px"   >
-        <div class="juxtapose" data-startingposition="{slider_position}" style = "height: 200px; width: auto; top: 1%; left: 1%; position: absolute;"  >
-            <img src="data:image/jpeg;base64,{filenames[0]}">'
-            <img src="data:image/jpeg;base64,{filenames[1]}">'
-        </div>
+        <div class="outer_layer" style="position: relative; padding-top: 210px;">
+            <div class="juxtapose" data-startingposition="{slider_position}" style="height: 200px; width: auto; top: 1%; left: 1%; position: absolute;">
+                <img src="data:image/jpeg;base64,{filenames[0]}" />' <img src="data:image/jpeg;base64,{filenames[1]}" />'
+            </div>
         </div>
         <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
-        <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+        <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css" />
         """
         display(HTML(html_code))
