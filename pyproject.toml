@@ -7,7 +7,6 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = ">=3.8"
-jupyterlab = ">=3.3.0"
 ipython = ">=7.0.0"
 
 [tool.poetry.dev-dependencies]
