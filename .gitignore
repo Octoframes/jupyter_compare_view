@@ -166,3 +166,4 @@ cython_debug/
 *.lock
 
 splitview_env/
+ideas/
