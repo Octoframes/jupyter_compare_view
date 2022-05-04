@@ -6,17 +6,16 @@ authors = ["kolibril13 <44469195+kolibril13@users.noreply.github.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.8,<3.11"
-ipykernel = "^6.13.0"
-jupyterlab = "^3.3.4"
+python = ">=3.8,<3.11"
+ipython = ">=7.0.0"
 
 [tool.poetry.dev-dependencies]
-black = {extras = ["jupyter"], version = "^22.3.0"}
-matplotlib = "^3.5.1"
-scipy = "^1.8.0"
-scikit-image = "^0.19.2"
-pytest = "^7.1.2"
-isort = "^5.10.1"
+black = {extras = ["jupyter"], version = ">=22.3.0"}
+matplotlib = ">=3.5.1"
+scipy = ">=1.8.0"
+scikit-image = ">=0.19.2"
+pytest = ">=7.1.2"
+isort = ">=5.10.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
