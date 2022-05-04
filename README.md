@@ -62,6 +62,7 @@ Formatting with black can be done this way:
 
 ## TODOS
 
+* Make this work also in VSCode notebooks
 * Handle cases where n ≠ 2 images.
 * Ship the javascript directly with the package, so no internet connection is required
 * automatically adjust the height parameter with f-strings

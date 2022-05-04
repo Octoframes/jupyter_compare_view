@@ -7,6 +7,7 @@ from IPython.core.magic import Magics, cell_magic, magics_class
 from IPython.display import display
 from IPython.utils.capture import capture_output
 
+
 @magics_class
 class SplitViewMagic(Magics):
     @magic_arguments.magic_arguments()
@@ -31,7 +32,7 @@ class SplitViewMagic(Magics):
         for output in result.outputs:
             data = output.data
             if "image/png" in data:
-                png_bytes_data = data["image/png"]                
+                png_bytes_data = data["image/png"]
                 filenames.append(png_bytes_data)
 
         html_code = f"""
@@ -40,19 +41,8 @@ class SplitViewMagic(Magics):
             <img src="data:image/jpeg;base64,{filenames[0]}">'
             <img src="data:image/jpeg;base64,{filenames[1]}">'
         </div>
-
         </div>
         <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
         <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
-        <script>
-        var el = document.getElementById('knightlab-logo');
-        el.remove(); 
-        </script>
-
-        <style>
-        .knightlab-logo {{
-            color: blue;
-        }}
-            </style>
         """
         display(HTML(html_code))
