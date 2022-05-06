@@ -37,7 +37,7 @@ Note: The split view widget is still responsive after closing and reopening the 
 
 Another example:
 ```py
-%%splity --position 73%
+%%splity --position 73% --height auto
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -51,9 +51,14 @@ ax2.imshow(array2)
 <img src="concept_image2.jpg" style="width: 300px;"/>
 
 
-Tested in JupyterLab.
-Does not work in VSCode Notebooks.
+## Notebook arguments
 
+* `--position 73%` will set the slider start position to 73%.
+*  The height of the widget. 
+* `--height 220` will set the height to 220 pixel. 
+* When `--height`is not provided, the default height of the widget is 300 pixel.
+* `--height auto` will set the height by the value of the first image's resolution in vertical direction.
+* The widget's width will always be adjusted automatically. 
 
 ## Notebook formatting
 Formatting with black can be done this way: 
@@ -63,12 +68,9 @@ Formatting with black can be done this way:
 ## TODOS
 
 * Make this work also in VSCode notebooks
-* Handle cases where n ≠ 2 images.
-* Ship the javascript directly with the package, so no internet connection is required
-* automatically adjust the height parameter with f-strings
+* Ship the javascript directly with the package, so no internet connection is required.
+* Handle cases where n ≠ 2 images. Currenty: All further img are ignored.
 * implement tests, find out how to test a magic class
-* parameter for default position in percent
-* test the custom path flag.
 
 Idea: Second option without using cell magic:
 ```python
@@ -82,6 +84,10 @@ display(my_splity)
 
 ## 0.0.4 (Work in Progress)
 
+* New `--height` parameter with three modes:
+    A) 200px fixed height
+    B) custom fixed height
+    C) auto height from first images
 
 ## 0.0.3
 
