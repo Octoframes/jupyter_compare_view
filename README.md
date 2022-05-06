@@ -67,9 +67,8 @@ Formatting with black can be done this way:
 
 ## TODOS
 
-* Make this work also in VSCode notebooks
 * Ship the javascript directly with the package, so no internet connection is required.
-* Handle cases where n ≠ 2 images. Currenty: All further img are ignored.
+* Handle cases where n ≠ 2 images. Currently: All further img are ignored.
 * implement tests, find out how to test a magic class
 
 Idea: Second option without using cell magic:
@@ -81,19 +80,19 @@ display(my_splity)
 
 ## Changelog
 
+## 0.0.5 (Work in Progress)
 
-## 0.0.4 (Work in Progress)
+* Make this work also in VSCode notebooks
 
-* New `--height` parameter with three modes:
-    A) 200px fixed height
-    B) custom fixed height
-    C) auto height from first images
 
+## 0.0.4 
+
+* New `--height` parameter
 ## 0.0.3
 
-* default sider position
+* default slider position
 * updated minimal example
-* internalt code restructuring and formatting
+* internal code restructuring and formatting
 * Handle import in non jupyter context
 
 ### 0.0.2 
