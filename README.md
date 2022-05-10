@@ -65,24 +65,27 @@ Formatting with black can be done this way:
 1. `pip install 'black[jupyter]'`
 2. `black --python-cell-magics splity splitview_magic.ipynb`
 
-## TODOS
 
-* Ship the javascript directly with the package, so no internet connection is required.
+
+
+## Changelog
+
+## Milestones for  >0.0.5
+
 * Handle cases where n ≠ 2 images. Currently: All further img are ignored.
 * implement tests, find out how to test a magic class
 
-Idea: Second option without using cell magic:
+* Idea: Second option without using cell magic:
 ```python
 from splitview import Splity # (does not yet exist)
 my_splity = Splity(left_layer=img1, right_layer=img2)
 display(my_splity)
 ```
 
-## Changelog
-
 ## 0.0.5 (Work in Progress)
 
-* Make this work also in VSCode notebooks
+* Ship the javascript directly with the package, so no internet connection is required
+* Make this work also in VSCode notebooks, [see this issue](https://github.com/NUKnightLab/juxtapose/issues/178).
 
 
 ## 0.0.4 
@@ -100,3 +103,5 @@ display(my_splity)
 ### 0.0.1
 
 * First release
+
+
