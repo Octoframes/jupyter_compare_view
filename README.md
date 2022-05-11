@@ -86,7 +86,7 @@ display(my_splity)
 
 * Ship the javascript directly with the package, so no internet connection is required
 * Make this work also in VSCode notebooks, [see this issue](https://github.com/NUKnightLab/juxtapose/issues/178).
-
+* Maybe change backend to https://github.com/onion2k/split-view ?
 
 ## 0.0.4 
 
