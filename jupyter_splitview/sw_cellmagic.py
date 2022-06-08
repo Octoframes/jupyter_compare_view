@@ -16,16 +16,15 @@ class SplitViewMagic(Magics):
         "--position",
         "-p",
         default="50%",
-        help=("The position where the slider starts"),
+        help=("The start position of the slider"),
     )
     @magic_arguments.argument(
         "--height",
         "-h",
         default="300",
         help=(
-            "The height that the widget has. The width will be adjusted automatically. \
-             If height is choosen 'auto', the height will be defined by the resolution \
-             in vertical direction of the first image."
+            "The widget's height. The width will be adjusted automatically. \
+             If height is `auto`, the vertical resolution of the first image is used."
         ),
     )
     @cell_magic
@@ -43,7 +42,7 @@ class SplitViewMagic(Magics):
                 png_bytes_data = data["image/png"]
                 out_images_base64.append(png_bytes_data)
 
-        # get the parameters the configure the widget
+        # get the parameters that configure the widget
         args = magic_arguments.parse_argstring(SplitViewMagic.splity, line)
 
         slider_position = args.position
@@ -53,8 +52,7 @@ class SplitViewMagic(Magics):
             imgdata = b64decode(out_images_base64[0])
             # maybe possible without the PIL dependency?
             im = Image.open(io.BytesIO(imgdata))
-            width, height = im.size
-            widget_height = height
+            widget_height = im.size[1]
 
         html_code = f"""
         <div class="outer_layer" style="position: relative; padding-top: {int(widget_height)+3}px;"> 

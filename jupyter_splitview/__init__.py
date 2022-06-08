@@ -1,5 +1,5 @@
 from .sw_cellmagic import SplitViewMagic
-from IPython import get_ipython  # register cell magic
+from IPython import get_ipython
 import pkg_resources
 
 __version__: str = pkg_resources.get_distribution(__name__).version
@@ -12,3 +12,4 @@ try:
 
 except AttributeError:
     print("Can not load SplitViewMagic because this is not a notebook")
+
