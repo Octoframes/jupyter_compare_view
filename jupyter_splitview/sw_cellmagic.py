@@ -54,14 +54,32 @@ class SplitViewMagic(Magics):
             im = Image.open(io.BytesIO(imgdata))
             widget_height = im.size[1]
 
-        html_code = f"""
-        <div class="outer_layer" style="position: relative; padding-top: {int(widget_height)+3}px;"> 
-            <div class="juxtapose" data-startingposition="{slider_position}" style="height: {int(widget_height)}px;; width: auto; top: 1%; left: 1%; position: absolute;">
-                <img src="data:image/jpeg;base64,{out_images_base64[0]}" />' <img src="data:image/jpeg;base64,{out_images_base64[1]}" />'
-            </div>
-        </div>
-        <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
-        <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css" />
+        html_code = """
+    <div id="foo"></div>
+
+    <script>
+        slider = new juxtapose.JXSlider('#foo',
+            [
+                {
+                    src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.TJNo8135ZBrLCojdcdtNoQHaHa%26pid%3DApi&f=1',
+                },
+                {
+                    src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.Yh4sZ7LKCEGMYlmmNnxYawHaHa%26pid%3DApi&f=1',
+                }
+            ],
+            {
+                animate: true,
+                showLabels: false,
+                showCredits: false,
+                startingPosition: "50%",
+                makeResponsive: true,
+                // undocumented shit
+                callback: (jx_slider) => {
+                    // remove juxtapose.js link and logo in bottom left corner
+                    jx_slider.slider.removeChild(jx_slider.labCredit);
+                },
+            });
+    </script>
         """
         display(HTML(html_code))
         
