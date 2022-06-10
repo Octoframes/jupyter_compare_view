@@ -1,0 +1,3 @@
+[submodule "vendor/juxtapose"]
+	path = vendor/juxtapose
+	url = https://github.com/NUKnightLab/juxtapose

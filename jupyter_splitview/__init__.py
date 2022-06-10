@@ -1,3 +1,5 @@
+import os
+
 from .sw_cellmagic import SplitViewMagic
 from IPython import get_ipython
 from IPython.core.display import HTML
@@ -11,10 +13,16 @@ print(f"Jupyter Splitview v{__version__}")
 try:
     ipy = get_ipython()
     ipy.register_magics(SplitViewMagic)
-    display(HTML("""
-    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css" />
-    <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
-            """))
+
+    css_abs = os.path.join((os.path.dirname(__file__)), "../vendor/juxtapose/build/css/juxtapose.css")
+    js_abs = os.path.join((os.path.dirname(__file__)), "../vendor/juxtapose/build/js/juxtapose.min.js")
+    css_rel = os.path.relpath(css_abs)
+    js_rel = os.path.relpath(js_abs)
+
+    display(HTML(f"""
+        <link rel="stylesheet" href="{css_rel}" />
+        <script src="{js_rel}"></script>
+    """))
 
 except AttributeError:
     print("Can not load SplitViewMagic because this is not a notebook")
