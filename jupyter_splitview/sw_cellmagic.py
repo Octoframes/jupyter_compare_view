@@ -68,3 +68,12 @@ class SplitViewMagic(Magics):
         html_code = compile_template(os.path.join((os.path.dirname(__file__)), "inject.html"), cell_id=g_cell_id, images=out_images_base64, slider_position=slider_position)
         g_cell_id += 1
         display(HTML(html_code))
+
+
+# <!-- <div class="outer_layer" style="position: relative; padding-top: {{ outer_layer_height }}px;"> -->
+# <!--     <div class="juxtapose" data-startingposition="{slider_position}" -->
+# <!--         style="height: {{ widget_height }}px; width: auto; top: 1%; left: 1%; position: absolute;"> -->
+# <!--         <img src="data:image/jpeg;base64,{out_images_base64[0]}" />' <img -->
+# <!--             src="data:image/jpeg;base64,{out_images_base64[1]}" />' -->
+# <!--     </div> -->
+# <!-- </div> -->

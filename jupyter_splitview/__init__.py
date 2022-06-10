@@ -20,7 +20,7 @@ try:
     js_rel = os.path.relpath(js_abs)
 
     display(HTML(f"""
-        <link rel="stylesheet" href="{css_rel}" />
+        <link rel="stylesheet" href="{css_rel}" type="text/css"/>
         <script src="{js_rel}"></script>
     """))
 
