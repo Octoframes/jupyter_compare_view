@@ -67,7 +67,14 @@ class SplitViewMagic(Magics):
         image_data_urls = [f"data:image/jpeg;base64,{base64.strip()}" for base64 in out_images_base64]
 
         global g_cell_id
-        html_code = compile_template(os.path.join((os.path.dirname(__file__)), "inject.html"), cell_id=g_cell_id, image_data_urls=image_data_urls, slider_position=slider_position)
+        html_code = compile_template(
+            os.path.join((os.path.dirname(__file__)), "inject.html"),
+            cell_id=g_cell_id,
+            image_data_urls=image_data_urls,
+            slider_position=slider_position,
+            wrapper_height=int(widget_height)+3,
+            height=int(widget_height),
+        )
         g_cell_id += 1
         display(HTML(html_code))
 
