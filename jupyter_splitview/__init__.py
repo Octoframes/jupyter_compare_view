@@ -14,15 +14,19 @@ try:
     ipy = get_ipython()
     ipy.register_magics(SplitViewMagic)
 
-    css_abs = os.path.join((os.path.dirname(__file__)), "../vendor/juxtapose/build/css/juxtapose.css")
-    js_abs = os.path.join((os.path.dirname(__file__)), "../vendor/juxtapose/build/js/juxtapose.min.js")
-    css_rel = os.path.relpath(css_abs)
-    js_rel = os.path.relpath(js_abs)
+    css_path = os.path.join((os.path.dirname(__file__)), "../vendor/juxtapose/build/css/juxtapose.css")
+    js_path = os.path.join((os.path.dirname(__file__)), "../vendor/juxtapose/build/js/juxtapose.min.js")
+    with open(css_path, "r") as file:
+        css = file.read()
+    with open(js_path, "r") as file:
+        js = file.read()
 
-    display(HTML(f"""
-        <link rel="stylesheet" href="/files{css_rel}" type="text/css"/>
-        <script src="/files{js_rel}"></script>
-    """))
+    html_code = f"""
+        <style>{css}</style>
+        <script>{js}</script>
+    """
+    display(HTML(html_code))
+
 
 except AttributeError:
     print("Can not load SplitViewMagic because this is not a notebook")

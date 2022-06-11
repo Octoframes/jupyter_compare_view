@@ -66,6 +66,32 @@ class SplitViewMagic(Magics):
 
         global g_cell_id
         html_code = compile_template(os.path.join((os.path.dirname(__file__)), "inject.html"), cell_id=g_cell_id, images=out_images_base64, slider_position=slider_position)
+        html_code = """
+    <div id="foo"></div>
+    <script>
+        slider = new juxtapose.JXSlider('#foo',
+            [
+                {
+                    src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.TJNo8135ZBrLCojdcdtNoQHaHa%26pid%3DApi&f=1',
+                },
+                {
+                    src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.Yh4sZ7LKCEGMYlmmNnxYawHaHa%26pid%3DApi&f=1',
+                }
+            ],
+            {
+                animate: true,
+                showLabels: false,
+                showCredits: false,
+                startingPosition: "50%",
+                makeResponsive: true,
+                // undocumented shit
+                callback: (jx_slider) => {
+                    // remove juxtapose.js link and logo in bottom left corner
+                    jx_slider.slider.removeChild(jx_slider.labCredit);
+                },
+            });
+    </script>
+        """
         g_cell_id += 1
         display(HTML(html_code))
 
