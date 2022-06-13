@@ -14,16 +14,12 @@ try:
     ipy = get_ipython()
     ipy.register_magics(SplitViewMagic)
 
-    css_path = os.path.join((os.path.dirname(__file__)), "../vendor/juxtapose/build/css/juxtapose.css")
-    js_path = os.path.join((os.path.dirname(__file__)), "../vendor/juxtapose/build/js/juxtapose.min.js")
-    with open(css_path, "r") as file:
-        css = file.read()
-    with open(js_path, "r") as file:
-        js = file.read()
+    css_path = Path(__file__).parents[1] / "vendor/juxtapose/build/css/juxtapose.css"
+    js_path = Path(__file__).parents[1] / "vendor/juxtapose/build/js/juxtapose.min.js"
 
     html_code = f"""
-        <style>{css}</style>
-        <script>{js}</script>
+        <style>{css_path.read_text()}</style>
+        <script>{js_path.read_text()}</script>
     """
     display(HTML(html_code))
 
