@@ -69,6 +69,7 @@ Formatting with black can be done this way:
 ## Developer Installation
 
 1. `git clone --recurse https://github.com/kolibril13/jupyter-splitview`
+(Note: In case that the repo was already cloned e.g. with the GitHub Desktop client, the  GitHub submodule has to be loaded via `git submodule update --init --recursive` )
 2. `poetry install`
 
 ## Changelog
