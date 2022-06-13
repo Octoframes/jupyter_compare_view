@@ -66,8 +66,11 @@ Formatting with black can be done this way:
 2. `black --python-cell-magics splity splitview_magic.ipynb`
 
 
+## Developer Installation
 
-
+1. Clone this repo
+2. Load github submodule via `git submodule update --init --recursive`
+3. Run `poetry install`
 ## Changelog
 
 ## Milestones for  >0.0.5
