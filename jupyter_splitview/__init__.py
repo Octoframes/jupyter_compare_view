@@ -1,4 +1,4 @@
-import os
+from pathlib import Path
 
 from .sw_cellmagic import SplitViewMagic
 from IPython import get_ipython
