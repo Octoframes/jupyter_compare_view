@@ -68,12 +68,12 @@ Formatting with black can be done this way:
 
 ## Developer Installation
 
-1. Clone this repo
-2. Load github submodule via `git submodule update --init --recursive`
-3. Run `poetry install`
+1. `git clone --recurse https://github.com/kolibril13/jupyter-splitview`
+2. `poetry install`
+
 ## Changelog
 
-## Milestones for  >0.0.5
+## Milestones for >0.0.5
 
 * Handle cases where n ≠ 2 images. Currently: All further img are ignored.
 * implement tests, find out how to test a magic class

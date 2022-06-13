@@ -66,6 +66,7 @@ class SplitViewMagic(Magics):
 
         image_data_urls = [f"data:image/jpeg;base64,{base64.strip()}" for base64 in out_images_base64]
 
+        # every juxtapose html node needs unique id
         global g_cell_id
         html_code = compile_template(
             os.path.join((os.path.dirname(__file__)), "inject.html"),
