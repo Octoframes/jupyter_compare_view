@@ -72,7 +72,7 @@ class SplitViewMagic(Magics):
             cell_id=g_cell_id,
             image_data_urls=image_data_urls,
             slider_position=slider_position,
-            wrapper_height=int(widget_height)+3,
+            wrapper_height=int(widget_height)+4,
             height=int(widget_height),
         )
         g_cell_id += 1
