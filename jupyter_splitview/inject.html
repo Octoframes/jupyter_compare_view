@@ -1,0 +1,43 @@
+<div id="splitview_wrapper_{{ cell_id }}">
+    <div id="splitview_{{ cell_id }}"></div>
+</div>
+
+<script>
+    slider = new juxtapose.JXSlider("#splitview_{{ cell_id }}",
+        [
+            {
+                src: "{{ image_data_urls[0] }}",
+            },
+            {
+                src: "{{ image_data_urls[1] }}",
+            }
+        ],
+        {
+            animate: true,
+            showLabels: false,
+            showCredits: false,
+            startingPosition: "{{ slider_position }}",
+            makeResponsive: true,
+            // undocumented shit
+            callback: (jx_slider) => {
+                // remove juxtapose.js link and logo in bottom left corner
+                jx_slider.slider.removeChild(jx_slider.labCredit);
+            },
+        });
+</script>
+
+<style>
+    #splitview_wrapper_{{ cell_id }} {
+        position: relative;
+        padding-top: {{ wrapper_height }}px;
+    }
+
+    #splitview_{{ cell_id }} {
+        height: {{ height }}px;
+        width: auto;
+        top: 1%;
+        left: 1%;
+        position: absolute;
+    }
+</style>
+

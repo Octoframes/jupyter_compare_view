@@ -1,4 +1,5 @@
 import io
+import os
 from base64 import b64decode
 
 from IPython.core import magic_arguments
@@ -8,6 +9,15 @@ from IPython.display import display
 from IPython.utils.capture import capture_output
 from PIL import Image
 
+from jinja2 import Template, StrictUndefined
+
+g_cell_id = 0
+
+def compile_template(in_file: str, **variables) -> str:
+    with open(f"{in_file}", "r", encoding="utf-8") as file:
+        template = Template(file.read(), undefined=StrictUndefined)
+    return template.render(**variables)
+
 
 @magics_class
 class SplitViewMagic(Magics):
@@ -16,16 +26,15 @@ class SplitViewMagic(Magics):
         "--position",
         "-p",
         default="50%",
-        help=("The position where the slider starts"),
+        help=("The start position of the slider"),
     )
     @magic_arguments.argument(
         "--height",
         "-h",
         default="300",
         help=(
-            "The height that the widget has. The width will be adjusted automatically. \
-             If height is choosen 'auto', the height will be defined by the resolution \
-             in vertical direction of the first image."
+            "The widget's height. The width will be adjusted automatically. \
+             If height is `auto`, the vertical resolution of the first image is used."
         ),
     )
     @cell_magic
@@ -43,7 +52,7 @@ class SplitViewMagic(Magics):
                 png_bytes_data = data["image/png"]
                 out_images_base64.append(png_bytes_data)
 
-        # get the parameters the configure the widget
+        # get the parameters that configure the widget
         args = magic_arguments.parse_argstring(SplitViewMagic.splity, line)
 
         slider_position = args.position
@@ -53,17 +62,20 @@ class SplitViewMagic(Magics):
             imgdata = b64decode(out_images_base64[0])
             # maybe possible without the PIL dependency?
             im = Image.open(io.BytesIO(imgdata))
-            width, height = im.size
-            widget_height = height
+            widget_height = im.size[1]
 
-        html_code = f"""
-        <div class="outer_layer" style="position: relative; padding-top: {int(widget_height)+3}px;"> 
-            <div class="juxtapose" data-startingposition="{slider_position}" style="height: {int(widget_height)}px;; width: auto; top: 1%; left: 1%; position: absolute;">
-                <img src="data:image/jpeg;base64,{out_images_base64[0]}" />' <img src="data:image/jpeg;base64,{out_images_base64[1]}" />'
-            </div>
-        </div>
-        <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
-        <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css" />
-        """
+        image_data_urls = [f"data:image/jpeg;base64,{base64.strip()}" for base64 in out_images_base64]
+
+        # every juxtapose html node needs unique id
+        global g_cell_id
+        html_code = compile_template(
+            os.path.join((os.path.dirname(__file__)), "inject.html"),
+            cell_id=g_cell_id,
+            image_data_urls=image_data_urls,
+            slider_position=slider_position,
+            wrapper_height=int(widget_height)+4,
+            height=int(widget_height),
+        )
+        g_cell_id += 1
         display(HTML(html_code))
-        
+
