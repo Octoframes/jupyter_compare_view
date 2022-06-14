@@ -74,7 +74,7 @@ Formatting with black can be done this way:
 
 ## Changelog
 
-## Milestones for >0.0.5
+## Milestones for >0.0.6
 
 * Handle cases where n ≠ 2 images. Currently: All further img are ignored.
 * implement tests, find out how to test a magic class
@@ -99,6 +99,7 @@ display(my_splity)
 ## 0.0.4 
 
 * New `--height` parameter
+
 ## 0.0.3
 
 * default slider position
