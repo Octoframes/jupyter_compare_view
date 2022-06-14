@@ -93,7 +93,7 @@ display(my_splity)
 ## 0.0.5 
 
 * Ship the javascript directly with the package, so no internet connection is required
-* use jinja2 to save HTML in seperate file
+* use jinja2 to save HTML in separate file
 * load stylesheet and javascript only once in the beginning, and not in every cell that contains the splitview widget.
 
 ## 0.0.4 
