@@ -74,7 +74,7 @@ Formatting with black can be done this way:
 
 ## Changelog
 
-## Milestones for >0.0.6
+## Milestones 
 
 * Handle cases where n ≠ 2 images. Currently: All further img are ignored.
 * implement tests, find out how to test a magic class
@@ -86,9 +86,14 @@ my_splity = Splity(left_layer=img1, right_layer=img2)
 display(my_splity)
 ```
 
-## 0.0.6 (Work in Progress)
+## 0.0.7 (Work in Progress)
+
 
 * Make this work also in VSCode notebooks, [see this issue](https://github.com/NUKnightLab/juxtapose/issues/178).
+
+## 0.0.6 
+
+Fix poetry workflow
 
 ## 0.0.5 
 
