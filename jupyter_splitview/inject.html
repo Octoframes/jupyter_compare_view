@@ -22,6 +22,8 @@
             callback: (jx_slider) => {
                 // remove juxtapose.js link and logo in bottom left corner
                 jx_slider.slider.removeChild(jx_slider.labCredit);
+                // keep juxtapose from adding logo back when reloading js and css injection
+                jx_slider.wrapper.className = "";
             },
         });
 </script>
