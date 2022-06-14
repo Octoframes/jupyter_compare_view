@@ -69,7 +69,7 @@ Formatting with black can be done this way:
 ## Developer Installation
 
 1. `git clone --recurse https://github.com/kolibril13/jupyter-splitview`
-(Note: In case that the repo was already cloned e.g. with the GitHub Desktop client, the  GitHub submodule has to be loaded via `git submodule update --init --recursive` )
+(Note: In case that the repo was already cloned e.g. with the GitHub Desktop client, the  GitHub submodule has to be loaded via `git submodule update --init --recursive`)
 2. `poetry install`
 
 ## Changelog
@@ -86,11 +86,15 @@ my_splity = Splity(left_layer=img1, right_layer=img2)
 display(my_splity)
 ```
 
-## 0.0.5 (Work in Progress)
+## 0.0.6 (Work in Progress)
+
+* Make this work also in VSCode notebooks, [see this issue](https://github.com/NUKnightLab/juxtapose/issues/178).
+
+## 0.0.5 
 
 * Ship the javascript directly with the package, so no internet connection is required
-* Make this work also in VSCode notebooks, [see this issue](https://github.com/NUKnightLab/juxtapose/issues/178).
-* Maybe change backend to https://github.com/onion2k/split-view ?
+* use jinja2 to save HTML in seperate file
+* load stylesheet and javascript only once in the beginning, and not in every cell that contains the splitview widget.
 
 ## 0.0.4 
 

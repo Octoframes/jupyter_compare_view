@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jupyter-splitview"
-version = "0.0.4"
+version = "0.0.5"
 description = "Making before/after image sliders in JupyterLab"
 authors = ["kolibril13 <44469195+kolibril13@users.noreply.github.com>"]
 license = "MIT"
