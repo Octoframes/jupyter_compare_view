@@ -31,7 +31,7 @@ ax2.axis("off")
 ax2.imshow(noisy_img)
 ```
 
-<img src="concept_image.jpg" style="width: 300px;"/>
+<img src="https://user-images.githubusercontent.com/44469195/173762859-61c12c6b-7d50-4a63-9a51-8b78b43b4b03.png" style="width: 350px;"/>
 
 Note: The split view widget is still responsive after closing and reopening the notebook without running the cell again.
 
@@ -49,7 +49,7 @@ ax1.imshow(array1)
 fig, ax2 = plt.subplots(figsize=(5, 10))
 ax2.imshow(array2)
 ```
-<img src="concept_image2.jpg" style="width: 300px;"/>
+<img src="https://user-images.githubusercontent.com/44469195/173763087-e76be74b-57e4-4861-ae0a-6c307021b785.png" style="width: 300px;"/>
 
 
 ## Notebook arguments
