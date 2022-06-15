@@ -1,6 +1,8 @@
 Jupyter Splitview
 =================
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kolibril13/jupyter-splitview/HEAD?labpath=example_notebook.ipynb)
+
 A cell magic that displays images in splitview using https://github.com/NUKnightLab/juxtapose.  
 *NOTE: Still work in progress, there will be breaking changes.*
 ## Installation
