@@ -1,0 +1,33 @@
+<script>
+    function add_css(css) {
+        let style = document.createElement("style");
+        style.setAttribute("type", "text/css");
+        style.appendChild(document.createTextNode(css));
+        style.className = "injected_dependency";
+
+        let notebook = document.getElementsByClassName("jp-Notebook")[0];
+        notebook.appendChild(style);
+    }
+
+    function add_js(js) {
+        let script = document.createElement("script");
+        script.type = "text/javascript";
+        script.text = js;
+        script.className = "injected_dependency";
+
+        let notebook = document.getElementsByClassName("jp-Notebook")[0];
+        notebook.appendChild(script);
+    }
+
+    function delete_injected_dependencies() {
+        let injected_dependencies = document.getElementsByClassName("injected_dependency");
+        for (let injected_dependency of injected_dependencies)
+            injected_dependency.parentNode.removeChild(injected_dependency);
+
+    }
+
+    delete_injected_dependencies();
+    add_css("{{ juxtapose_css }}");
+    add_js("{{ juxtapose_js }}");
+    add_js("console.log('injected juxtapose.js');");
+</script>

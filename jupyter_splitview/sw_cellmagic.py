@@ -9,14 +9,9 @@ from IPython.display import display
 from IPython.utils.capture import capture_output
 from PIL import Image
 
-from jinja2 import Template, StrictUndefined
+from .template import compile_template
 
 g_cell_id = 0
-
-def compile_template(in_file: str, **variables) -> str:
-    with open(f"{in_file}", "r", encoding="utf-8") as file:
-        template = Template(file.read(), undefined=StrictUndefined)
-    return template.render(**variables)
 
 
 @magics_class
@@ -69,7 +64,7 @@ class SplitViewMagic(Magics):
         # every juxtapose html node needs unique id
         global g_cell_id
         html_code = compile_template(
-            os.path.join((os.path.dirname(__file__)), "inject.html"),
+            os.path.join((os.path.dirname(__file__)), "inject_split.html"),
             cell_id=g_cell_id,
             image_data_urls=image_data_urls,
             slider_position=slider_position,
