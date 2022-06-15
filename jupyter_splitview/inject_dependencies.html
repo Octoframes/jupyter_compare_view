@@ -23,7 +23,7 @@
         let injected_dependencies = document.getElementsByClassName("injected_dependency");
         // for whatever reason this cna't be done with a normal for loop
         // so have fun deleting elements like a cave man ;)
-        while (injected_dependency.length) {
+        while (injected_dependencies.length) {
             injected_dependencies[0].parentNode.removeChild(injected_dependencies[0]);
             injected_dependencies = document.getElementsByClassName("injected_dependency");
         }
