@@ -1,15 +1,12 @@
 import io
-import os
 from base64 import b64decode
 
 from IPython.core import magic_arguments
-from IPython.core.display import HTML
 from IPython.core.magic import Magics, cell_magic, magics_class
-from IPython.display import display
 from IPython.utils.capture import capture_output
 from PIL import Image
 
-from .template import compile_template
+from .template import inject_split
 
 g_cell_id = 0
 
@@ -63,8 +60,7 @@ class SplitViewMagic(Magics):
 
         # every juxtapose html node needs unique id
         global g_cell_id
-        html_code = compile_template(
-            os.path.join((os.path.dirname(__file__)), "inject_split.html"),
+        inject_split(
             cell_id=g_cell_id,
             image_data_urls=image_data_urls,
             slider_position=slider_position,
@@ -72,5 +68,4 @@ class SplitViewMagic(Magics):
             height=int(widget_height),
         )
         g_cell_id += 1
-        display(HTML(html_code))
 

@@ -21,14 +21,15 @@
 
     function delete_injected_dependencies() {
         let injected_dependencies = document.getElementsByClassName("injected_dependency");
-        for (let injected_dependency of injected_dependencies)
-            injected_dependency.parentNode.removeChild(injected_dependency);
-
+        // for whatever reason this cna't be done with a normal for loop
+        // so have fun deleting elements like a cave man ;)
+        while (injected_dependency.length) {
+            injected_dependencies[0].parentNode.removeChild(injected_dependencies[0]);
+            injected_dependencies = document.getElementsByClassName("injected_dependency");
+        }
     }
 
     delete_injected_dependencies();
     add_css("{{ juxtapose_css }}");
     add_js("{{ juxtapose_js }}");
-    console.log("injecting juxtapose.js");
-    add_js("console.log('injected juxtapose.js');");
 </script>
