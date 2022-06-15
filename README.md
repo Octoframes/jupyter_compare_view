@@ -23,11 +23,11 @@ img = data.chelsea()
 noisy_img = random_noise(img, var=0.02)
 
 fig, ax1 = plt.subplots()
-ax1.axis('off')
+ax1.axis("off")
 ax1.imshow(img)
 
 fig, ax2 = plt.subplots()
-ax2.axis('off')
+ax2.axis("off")
 ax2.imshow(noisy_img)
 ```
 
@@ -38,6 +38,7 @@ Note: The split view widget is still responsive after closing and reopening the 
 Another example:
 ```py
 %%splity --position 73% --height auto
+
 import matplotlib.pyplot as plt
 import numpy as np
 
