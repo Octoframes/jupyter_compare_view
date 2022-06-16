@@ -4,6 +4,7 @@ version = "0.0.8"
 description = "Making before/after image sliders in JupyterLab"
 authors = ["kolibril13 <44469195+kolibril13@users.noreply.github.com>"]
 license = "MIT"
+readme="README.md"
 include = [
     "vendor/juxtapose/build/css/juxtapose.css",
     "vendor/juxtapose/build/js/juxtapose.min.js",
