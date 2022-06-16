@@ -1,4 +1,5 @@
 import os
+import uuid
 from pathlib import Path
 from jinja2 import Template, StrictUndefined
 from IPython.core.display import HTML
@@ -27,10 +28,10 @@ def inject_dependencies() -> None:
     display(HTML(html_code))
 
 
-def inject_split(cell_id, image_data_urls, slider_position, wrapper_height, height) -> None:
+def inject_split(image_data_urls, slider_position, wrapper_height, height) -> None:
     html_code = compile_template(
         os.path.join((os.path.dirname(__file__)), "inject_split.html"),
-        cell_id=cell_id,
+        rnd_str=uuid.uuid1(),
         image_data_urls=image_data_urls,
         slider_position=slider_position,
         wrapper_height=wrapper_height,

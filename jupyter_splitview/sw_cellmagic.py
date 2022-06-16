@@ -8,8 +8,6 @@ from PIL import Image
 
 from .inject import inject_split
 
-g_cell_id = 0
-
 
 @magics_class
 class SplitViewMagic(Magics):
@@ -59,13 +57,10 @@ class SplitViewMagic(Magics):
         image_data_urls = [f"data:image/jpeg;base64,{base64.strip()}" for base64 in out_images_base64]
 
         # every juxtapose html node needs unique id
-        global g_cell_id
         inject_split(
-            cell_id=g_cell_id,
             image_data_urls=image_data_urls,
             slider_position=slider_position,
             wrapper_height=int(widget_height)+4,
             height=int(widget_height),
         )
-        g_cell_id += 1
 

@@ -1,9 +1,9 @@
-<div id="splitview_wrapper_{{ cell_id }}">
-    <div id="splitview_{{ cell_id }}"></div>
+<div id="splitview_wrapper_{{ rnd_str }}">
+    <div id="splitview_{{ rnd_str }}"></div>
 </div>
 
 <script>
-    slider = new juxtapose.JXSlider("#splitview_{{ cell_id }}",
+    slider = new juxtapose.JXSlider("#splitview_{{ rnd_str }}",
         [
             {
                 src: "{{ image_data_urls[0] }}",
@@ -29,12 +29,12 @@
 </script>
 
 <style>
-    #splitview_wrapper_{{ cell_id }} {
+    #splitview_wrapper_{{ rnd_str }} {
         position: relative;
         padding-top: {{ wrapper_height }}px;
     }
 
-    #splitview_{{ cell_id }} {
+    #splitview_{{ rnd_str }} {
         height: {{ height }}px;
         width: auto;
         top: 1%;
