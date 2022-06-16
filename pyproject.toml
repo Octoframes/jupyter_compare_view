@@ -12,8 +12,8 @@ include = [
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
-ipython = ">=7.0.0"
-ipykernel = ">=6.13.0"
+ipython = ">=6.0.0"
+ipykernel = ">=5.0.0"
 Pillow = ">=9.1.0"
 Jinja2 = ">=3.1.2"
 
