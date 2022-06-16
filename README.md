@@ -5,6 +5,7 @@ Jupyter Splitview
 [![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://kolibril13.github.io/jupyter-splitview/)
 A cell magic that displays images in splitview using https://github.com/NUKnightLab/juxtapose.  
 *NOTE: Still work in progress, there will be breaking changes.*
+*Note: JupyterLite example is still work in progress
 ## Installation
 ```py
 pip install jupyter-splitview
