@@ -2,7 +2,7 @@ from .sw_cellmagic import SplitViewMagic
 from IPython import get_ipython
 import pkg_resources
 
-from .template import inject_dependencies
+from .inject import inject_dependencies
 
 __version__: str = pkg_resources.get_distribution(__name__).version
 

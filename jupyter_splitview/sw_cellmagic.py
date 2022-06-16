@@ -6,7 +6,7 @@ from IPython.core.magic import Magics, cell_magic, magics_class
 from IPython.utils.capture import capture_output
 from PIL import Image
 
-from .template import inject_split
+from .inject import inject_split
 
 g_cell_id = 0
 
