@@ -37,7 +37,6 @@ def inject_split(cell_id, image_data_urls, slider_position, wrapper_height, heig
         height=height,
     )
     display(HTML(html_code))
-    # TODO: deside if this is actually necessary
     # ensure to include the sources every time
     inject_dependencies()
 
