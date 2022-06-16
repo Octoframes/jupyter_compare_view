@@ -2,7 +2,7 @@ Jupyter Splitview
 =================
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kolibril13/jupyter-splitview/HEAD?labpath=example_notebook.ipynb)
-[![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://kolibril13.github.io/jupyter-splitview/)
+[![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://kolibril13.github.io/jupyter-splitview/)  
 A cell magic that displays images in splitview using https://github.com/NUKnightLab/juxtapose.  
 *NOTE: Still work in progress, there will be breaking changes.*
 *Note: JupyterLite example is still work in progress
@@ -90,11 +90,16 @@ my_splity = Splity(left_layer=img1, right_layer=img2)
 display(my_splity)
 ```
 
-## 0.0.7 (Work in Progress)
+## 0.0.8 (Work in Progress)
 
 
 * Make this work also in VSCode notebooks, [see this issue](https://github.com/NUKnightLab/juxtapose/issues/178).
 
+
+## 0.0.7
+
+* Rewrite of the import of JavaScript and CSS to make it more robust when closing and opening the notebook
+* First attempt to add a JupyterLite example.
 ## 0.0.6 
 
 Fix poetry workflow
