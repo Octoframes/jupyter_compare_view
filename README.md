@@ -1,8 +1,11 @@
 Jupyter Splitview
 =================
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kolibril13/jupyter-splitview/HEAD?labpath=example_notebook.ipynb)
+[![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://kolibril13.github.io/jupyter-splitview/)
 A cell magic that displays images in splitview using https://github.com/NUKnightLab/juxtapose.  
 *NOTE: Still work in progress, there will be breaking changes.*
+*Note: JupyterLite example is still work in progress
 ## Installation
 ```py
 pip install jupyter-splitview
@@ -23,21 +26,22 @@ img = data.chelsea()
 noisy_img = random_noise(img, var=0.02)
 
 fig, ax1 = plt.subplots()
-ax1.axis('off')
+ax1.axis("off")
 ax1.imshow(img)
 
 fig, ax2 = plt.subplots()
-ax2.axis('off')
+ax2.axis("off")
 ax2.imshow(noisy_img)
 ```
 
-<img src="concept_image.jpg" style="width: 300px;"/>
+<img src="https://user-images.githubusercontent.com/44469195/173762859-61c12c6b-7d50-4a63-9a51-8b78b43b4b03.png" style="width: 350px;"/>
 
 Note: The split view widget is still responsive after closing and reopening the notebook without running the cell again.
 
 Another example:
 ```py
 %%splity --position 73% --height auto
+
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -48,7 +52,7 @@ ax1.imshow(array1)
 fig, ax2 = plt.subplots(figsize=(5, 10))
 ax2.imshow(array2)
 ```
-<img src="concept_image2.jpg" style="width: 300px;"/>
+<img src="https://user-images.githubusercontent.com/44469195/173763087-e76be74b-57e4-4861-ae0a-6c307021b785.png" style="width: 300px;"/>
 
 
 ## Notebook arguments
