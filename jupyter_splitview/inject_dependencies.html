@@ -1,0 +1,35 @@
+<script>
+    function add_css(css) {
+        let style = document.createElement("style");
+        style.setAttribute("type", "text/css");
+        style.appendChild(document.createTextNode(css));
+        style.className = "injected_dependency";
+
+        let notebook = document.getElementsByClassName("jp-Notebook")[0];
+        notebook.appendChild(style);
+    }
+
+    function add_js(js) {
+        let script = document.createElement("script");
+        script.type = "text/javascript";
+        script.text = js;
+        script.className = "injected_dependency";
+
+        let notebook = document.getElementsByClassName("jp-Notebook")[0];
+        notebook.appendChild(script);
+    }
+
+    function delete_injected_dependencies() {
+        let injected_dependencies = document.getElementsByClassName("injected_dependency");
+        // for whatever reason this can't be done with a normal for loop
+        // so have fun deleting elements like a cave man ;)
+        while (injected_dependencies.length) {
+            injected_dependencies[0].parentNode.removeChild(injected_dependencies[0]);
+            injected_dependencies = document.getElementsByClassName("injected_dependency");
+        }
+    }
+
+    delete_injected_dependencies();
+    add_css("{{ juxtapose_css }}");
+    add_js("{{ juxtapose_js }}");
+</script>
