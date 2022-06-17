@@ -92,7 +92,7 @@ display(my_splity)
 * Make this work also in VSCode notebooks, [see this issue](https://github.com/NUKnightLab/juxtapose/issues/178).
 
 
-```
+
 
 ## 0.0.8
 
