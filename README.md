@@ -88,6 +88,7 @@ Formatting with black can be done this way:
 from splitview import Splity # (does not yet exist)
 my_splity = Splity(left_layer=img1, right_layer=img2)
 display(my_splity)
+```
 
 * Make this work also in VSCode notebooks, [see this issue](https://github.com/NUKnightLab/juxtapose/issues/178).
 
