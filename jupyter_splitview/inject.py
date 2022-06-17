@@ -6,7 +6,7 @@ from IPython.core.display import HTML
 from IPython.display import display
 
 def compile_template(in_file: str, **variables) -> str:
-    with open(f"{in_file}", "r", encoding="utf-8") as file:
+    with open(in_file, "r", encoding="utf-8") as file:
         template = Template(file.read(), undefined=StrictUndefined)
     return template.render(**variables)
 
