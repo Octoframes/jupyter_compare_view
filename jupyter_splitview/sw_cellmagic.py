@@ -41,6 +41,8 @@ class SplitViewMagic(Magics):
             if "image/png" in data:
                 png_bytes_data = data["image/png"]
                 out_images_base64.append(png_bytes_data)
+        if len(out_images_base64) != 2:
+            raise ValueError("There need to be two images for jupyter_splitview to work.")
 
         # get the parameters that configure the widget
         args = magic_arguments.parse_argstring(SplitViewMagic.splity, line)
