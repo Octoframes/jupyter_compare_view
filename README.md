@@ -88,13 +88,17 @@ Formatting with black can be done this way:
 from splitview import Splity # (does not yet exist)
 my_splity = Splity(left_layer=img1, right_layer=img2)
 display(my_splity)
-```
-
-## 0.0.8 (Work in Progress)
-
 
 * Make this work also in VSCode notebooks, [see this issue](https://github.com/NUKnightLab/juxtapose/issues/178).
 
+
+```
+
+## 0.0.8
+
+* Fixing problem with cell id and notebook reloading
+* Experimentally lowering the dependencies to
+`ipython = ">=6.0.0"` and `ipykernel = ">=5.0.0"` so that  jupyterlite will work hopefully.
 
 ## 0.0.7
 
