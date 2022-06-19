@@ -20,9 +20,6 @@ jobs:
         run: |
           python -m pip install -r .binder/requirements.txt
           python -m pip install -r .jupyterlite/requirements.txt
-          python -m pip wheel .
-          mkdir -p pypi
-          cp jupyter_splitview*.whl pypi/
       - name: Build the JupyterLite site
         run: |
           mkdir -p content

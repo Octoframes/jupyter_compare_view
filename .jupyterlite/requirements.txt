@@ -1,6 +1,9 @@
 #------ JupyerLite install -------
 jupyterlite==0.1.0b8
 
+#-------  Install Splitview widget -------
+jupyter-splitview
+
 #------ JupyerLab install -------
 ipywidgets>=7.7,<8
 jupyterlab~=3.3.0
