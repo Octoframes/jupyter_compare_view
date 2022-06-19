@@ -28,7 +28,7 @@ jobs:
           mkdir -p content
           cp README.md content
           cp example_notebook.ipynb content
-          cp jupyterlite_debugging_notebook.ipynb content
+          cp jupyterlite_notebook.ipynb content
           jupyter lite build --contents ./content
       - name: Upload (dist)
         uses: actions/upload-artifact@v2
