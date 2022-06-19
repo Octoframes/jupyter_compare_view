@@ -93,7 +93,11 @@ display(my_splity)
 * Make this work also in VSCode notebooks, [see this issue](https://github.com/NUKnightLab/juxtapose/issues/178).
 
 
+## 0.0.9
 
+* JupyterLite:
+    * Fix: in JupyterLite, a figure has to be explicitly called by plt.show()
+    * Better installation workflow
 
 ## 0.0.8
 
