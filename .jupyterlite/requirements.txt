@@ -1,6 +1,3 @@
-#-------  Install Splitview widget -------
-jupyter-splitview
-
 #------ JupyerLite install -------
 jupyterlite==0.1.0b8
 
