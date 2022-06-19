@@ -4,8 +4,8 @@ Jupyter Splitview
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kolibril13/jupyter-splitview/HEAD?labpath=example_notebook.ipynb)
 [![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://kolibril13.github.io/jupyter-splitview/)  
 A cell magic that displays images in splitview using https://github.com/NUKnightLab/juxtapose.  
-*Note : Still work in progress, there will be breaking changes.*  
-*Note 2: JupyterLite Demo by pressing [![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://kolibril13.github.io/jupyter-splitview/) will come soon.*
+
+
 ## Installation
 ```py
 pip install jupyter-splitview
