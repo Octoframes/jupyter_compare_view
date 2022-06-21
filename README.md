@@ -92,6 +92,14 @@ display(my_splity)
 
 * Make this work also in VSCode notebooks, [see this issue](https://github.com/NUKnightLab/juxtapose/issues/178).
 
+* Some other nice views, like these:
+
+Round Mask:  
+<img src="https://user-images.githubusercontent.com/44469195/174830910-9f569352-eb10-426a-9a8a-fbd73e27d757.jpeg" style="width: 300px;"/>
+
+Gaussian Mask:  
+<img src="https://user-images.githubusercontent.com/44469195/174830929-aa7c6a97-676a-4a20-9a07-d9f41f5817da.jpeg" style="width: 300px;"/>
+
 
 ## 0.0.9
 
