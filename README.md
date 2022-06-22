@@ -95,11 +95,13 @@ display(my_splity)
 * Some other nice views, like these:
 
 Round Mask:  
-<img src="https://user-images.githubusercontent.com/44469195/174830910-9f569352-eb10-426a-9a8a-fbd73e27d757.jpeg" style="width: 300px;"/>
+<img src="https://user-images.githubusercontent.com/44469195/175031002-0f94c143-0145-4254-88ec-a8e450faa6af.png" style="width: 300px;"/>
 
-Gaussian Mask:  
-<img src="https://user-images.githubusercontent.com/44469195/174830929-aa7c6a97-676a-4a20-9a07-d9f41f5817da.jpeg" style="width: 300px;"/>
+Double Round Mask, Second one with 50% opacity:  
+<img src="https://user-images.githubusercontent.com/44469195/175031014-81e78b3a-9e74-4d21-b516-2c5a0cc7f869.png" style="width: 300px;"/>
 
+Gaussian Mask (no priority):  
+<img src="https://user-images.githubusercontent.com/44469195/175031027-ef5da1f8-9c32-454f-aa1a-40d10eb086d6.png" style="width: 300px;"/>
 
 ## 0.0.9
 
