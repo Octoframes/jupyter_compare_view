@@ -34,7 +34,7 @@ ax2.axis("off")
 ax2.imshow(grayscale_img, cmap="gray")
 ```
 
-<img src="https://user-images.githubusercontent.com/44469195/173762859-61c12c6b-7d50-4a63-9a51-8b78b43b4b03.png" style="width: 350px;"/>
+<img src="https://user-images.githubusercontent.com/44469195/175052654-c6c06908-746b-4bcb-819f-c81c0e8dd521.png" style="width: 300px;"/>
 
 Note: The split view widget is still responsive after closing and reopening the notebook without running the cell again.
 
