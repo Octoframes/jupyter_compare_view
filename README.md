@@ -3,7 +3,7 @@ Jupyter Splitview
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kolibril13/jupyter-splitview/HEAD?labpath=example_notebook.ipynb)
 [![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://kolibril13.github.io/jupyter-splitview/)  
-A cell magic that displays images in splitview using https://github.com/NUKnightLab/juxtapose.  
+A cell magic that displays images in splitview using [github.com/NUKnightLab/juxtapose](https://github.com/NUKnightLab/juxtapose).  
 
 
 ## Installation
@@ -19,11 +19,11 @@ import jupyter_splitview
 %%splity
 
 from skimage import data
-from skimage.util import random_noise
+from skimage.color import rgb2gray
 import matplotlib.pyplot as plt
 
 img = data.chelsea()
-noisy_img = random_noise(img, var=0.02)
+grayscale_img = rgb2gray(img)
 
 fig, ax1 = plt.subplots()
 ax1.axis("off")
@@ -31,7 +31,7 @@ ax1.imshow(img)
 
 fig, ax2 = plt.subplots()
 ax2.axis("off")
-ax2.imshow(noisy_img)
+ax2.imshow(grayscale_img, cmap="gray")
 ```
 
 <img src="https://user-images.githubusercontent.com/44469195/173762859-61c12c6b-7d50-4a63-9a51-8b78b43b4b03.png" style="width: 350px;"/>
