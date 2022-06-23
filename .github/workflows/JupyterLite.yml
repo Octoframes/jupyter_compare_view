@@ -18,13 +18,12 @@ jobs:
           python-version: 3.9
       - name: Install the dependencies
         run: |
-          python -m pip install -r .binder/requirements.txt
           python -m pip install -r .jupyterlite/requirements.txt
       - name: Build the JupyterLite site
         run: |
           mkdir -p content
           cp README.md content
-          cp jupyterlite_notebook.ipynb content
+          cp jupyterlite_splitview_notebook.ipynb content
           jupyter lite build --contents ./content
       - name: Upload (dist)
         uses: actions/upload-artifact@v2
