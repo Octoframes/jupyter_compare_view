@@ -103,11 +103,12 @@ Double Round Mask, Second one with 50% opacity:
 Gaussian Mask (no priority):  
 <img src="https://user-images.githubusercontent.com/44469195/175031027-ef5da1f8-9c32-454f-aa1a-40d10eb086d6.png" style="width: 300px;"/>
 
-## 0.0.9
+## 0.1.0
 
-* JupyterLite:
-    * Fix: in JupyterLite, a figure has to be explicitly called by plt.show()
-    * Better installation workflow
+* Update dependencies
+* Update JupyterLite version
+* Fix: in JupyterLite, a figure has to be explicitly called by plt.show()
+* Better installation workflow
 
 ## 0.0.8
 
