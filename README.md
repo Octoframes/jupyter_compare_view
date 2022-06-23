@@ -78,7 +78,7 @@ Formatting with black can be done this way:
 
 ## Changelog
 
-## Milestones 
+## Milestones / Wishlist
 
 * Handle cases where n ≠ 2 images. Currently: All further img are ignored.
 * implement tests, find out how to test a magic class
