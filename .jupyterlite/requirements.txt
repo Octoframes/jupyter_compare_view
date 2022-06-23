@@ -1,5 +1,5 @@
 #------ JupyerLite install -------
-jupyterlite==0.1.0b8
+jupyterlite==0.1.0b9
 
 #------ JupyerLab install -------
 ipywidgets>=7.7,<8

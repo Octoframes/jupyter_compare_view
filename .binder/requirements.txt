@@ -3,4 +3,3 @@ Pillow
 numpy
 matplotlib
 scikit-image
-jupyter-splitview
