@@ -18,10 +18,13 @@ def sanitise_injection(inject: str) -> str:
 
 def inject_dependencies() -> None:
     js_path = Path(__file__).parents[1] / "vendor/compare_view/browser_compare_view.js"
+    # TODO: remove
+    # js_path = Path("/home/chris/compare_view/public/browser_compare_view.js")
+    js = sanitise_injection(js_path.read_text())
 
     html_code = compile_template(
         os.path.join((os.path.dirname(__file__)), "inject_dependencies.html"),
-        js = sanitise_injection(js_path.read_text()),
+        js=js,
     )
     display(HTML(html_code))
 
