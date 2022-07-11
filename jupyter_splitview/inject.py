@@ -17,24 +17,23 @@ def sanitise_injection(inject: str) -> str:
 
 
 def inject_dependencies() -> None:
-    css_path = Path(__file__).parents[1] / "vendor/juxtapose/build/css/juxtapose.css"
-    js_path = Path(__file__).parents[1] / "vendor/juxtapose/build/js/juxtapose.min.js"
+    js_path = Path(__file__).parents[1] / "vendor/compare_view/browser_compare_view.js"
 
     html_code = compile_template(
         os.path.join((os.path.dirname(__file__)), "inject_dependencies.html"),
-        juxtapose_css = sanitise_injection(css_path.read_text()),
-        juxtapose_js = sanitise_injection(js_path.read_text()),
+        js = sanitise_injection(js_path.read_text()),
     )
     display(HTML(html_code))
 
 
-def inject_split(image_data_urls, slider_position, wrapper_height, height) -> None:
+def inject_split(image_data_urls, slider_position, wrapper_height, width, height) -> None:
     html_code = compile_template(
         os.path.join((os.path.dirname(__file__)), "inject_split.html"),
         rnd_str=uuid.uuid1(),
         image_data_urls=image_data_urls,
         slider_position=slider_position,
         wrapper_height=wrapper_height,
+        width=width,
         height=height,
     )
     display(HTML(html_code))

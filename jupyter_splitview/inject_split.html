@@ -1,45 +1,19 @@
-<div id="splitview_wrapper_{{ rnd_str }}">
-    <div id="splitview_{{ rnd_str }}"></div>
+<div style="display: flex; flex-direction: row; width: 100%;">
+    <canvas id="canvas_{{ rnd_str }}" style="height: {{ height }}px; width: {{ width }}px;"></canvas>
+    <div id="controls_{{ rnd_str }}" style="width: auto; margin-right: 10px;">
+    </div>
 </div>
 
 <script>
-    slider = new juxtapose.JXSlider("#splitview_{{ rnd_str }}",
-        [
-            {
-                src: "{{ image_data_urls[0] }}",
-            },
-            {
-                src: "{{ image_data_urls[1] }}",
-            }
-        ],
-        {
-            animate: true,
-            showLabels: false,
-            showCredits: false,
-            startingPosition: "{{ slider_position }}",
-            makeResponsive: true,
-            // undocumented shit
-            callback: (jx_slider) => {
-                // remove juxtapose.js link and logo in bottom left corner
-                jx_slider.slider.removeChild(jx_slider.labCredit);
-                // keep juxtapose from adding logo back when reloading js and css injection
-                jx_slider.wrapper.className = "";
-            },
-        });
+    compare_view.load(
+        [{% for image_data_url in image_data_urls %}
+    "{{ image_data_url }}",
+        {% endfor %}],
+    "canvas_{{ rnd_str }}",
+    {
+        controls_id: "controls_{{ rnd_str}}",
+        start_mode: "horizontal",
+        circle_size: 50,
+    }
+    );
 </script>
-
-<style>
-    #splitview_wrapper_{{ rnd_str }} {
-        position: relative;
-        padding-top: {{ wrapper_height }}px;
-    }
-
-    #splitview_{{ rnd_str }} {
-        height: {{ height }}px;
-        width: auto;
-        top: 1%;
-        left: 1%;
-        position: absolute;
-    }
-</style>
-

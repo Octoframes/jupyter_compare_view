@@ -48,13 +48,14 @@ class SplitViewMagic(Magics):
         args = magic_arguments.parse_argstring(SplitViewMagic.splity, line)
 
         slider_position = args.position
-        widget_height = args.height
+        height = args.height
 
-        if widget_height == "auto":
-            imgdata = b64decode(out_images_base64[0])
-            # maybe possible without the PIL dependency?
-            im = Image.open(io.BytesIO(imgdata))
-            widget_height = im.size[1]
+        # if height == "auto":
+        imgdata = b64decode(out_images_base64[0])
+        # maybe possible without the PIL dependency?
+        im = Image.open(io.BytesIO(imgdata))
+        width = int(im.size[0])
+        height = int(im.size[1])
 
         image_data_urls = [f"data:image/jpeg;base64,{base64.strip()}" for base64 in out_images_base64]
 
@@ -62,7 +63,8 @@ class SplitViewMagic(Magics):
         inject_split(
             image_data_urls=image_data_urls,
             slider_position=slider_position,
-            wrapper_height=int(widget_height)+4,
-            height=int(widget_height),
+            wrapper_height=int(height)+4,
+            width=width,
+            height=height,
         )
 
