@@ -1,19 +1,15 @@
 <div style="display: flex; flex-direction: row; width: 100%;">
-    <canvas id="canvas_{{ rnd_str }}" style="width: {{ width }}px;"></canvas>
-    <div id="controls_{{ rnd_str }}" style="width: auto; margin-right: 10px;">
+    <canvas id="canvas_{{ key }}" style="height: {{ height }}px;"></canvas>
+    <div id="controls_{{ key }}" style="width: auto; margin-right: 10px;">
     </div>
 </div>
 
 <script>
     compare_view.load(
-        [{% for image_data_url in image_data_urls %}
-    "{{ image_data_url }}",
+        [{% for image_url in image_urls %}
+    "{{ image_url }}",
         {% endfor %}],
-    "canvas_{{ rnd_str }}",
-    {
-        controls_id: "controls_{{ rnd_str}}",
-        start_mode: "horizontal",
-        // circle_size: 50,
-    }
+    "canvas_{{ key }}",
+        {{config}}
     );
 </script>
