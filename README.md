@@ -3,7 +3,7 @@ Jupyter Splitview
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kolibril13/jupyter-splitview/HEAD?labpath=example_notebook.ipynb)
 [![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://kolibril13.github.io/jupyter-splitview/)  
-A cell magic that displays images in splitview using [github.com/NUKnightLab/juxtapose](https://github.com/NUKnightLab/juxtapose).  
+A cell magic that displays images in splitview.
 
 
 ## Installation
@@ -103,6 +103,11 @@ Double Round Mask, Second one with 50% opacity:
 Gaussian Mask (no priority):  
 <img src="https://user-images.githubusercontent.com/44469195/175031027-ef5da1f8-9c32-454f-aa1a-40d10eb086d6.png" style="width: 300px;"/>
 
+# 0.1.1
+
+* Drop the [github.com/NUKnightLab/juxtapose](https://github.com/NUKnightLab/juxtapose) backend and replace it with [github.com/Octoframes/compare_view](https://github.com/Octoframes/compare_view).  
+
+* Implement Round Mask
 ## 0.1.0
 
 * Update dependencies
