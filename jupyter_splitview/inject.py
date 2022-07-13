@@ -1,8 +1,9 @@
+import json
 import os
 import uuid
 from pathlib import Path
 from jinja2 import Template, StrictUndefined
-from IPython.core.display import HTML
+from IPython.core.display import HTML, JSON
 from IPython.display import display
 
 def compile_template(in_file: str, **variables) -> str:
@@ -17,25 +18,29 @@ def sanitise_injection(inject: str) -> str:
 
 
 def inject_dependencies() -> None:
-    css_path = Path(__file__).parents[1] / "vendor/juxtapose/build/css/juxtapose.css"
-    js_path = Path(__file__).parents[1] / "vendor/juxtapose/build/js/juxtapose.min.js"
+    js_path = Path(__file__).parents[1] / "vendor/compare_view/browser_compare_view.js"
+    js = sanitise_injection(js_path.read_text())
 
     html_code = compile_template(
         os.path.join((os.path.dirname(__file__)), "inject_dependencies.html"),
-        juxtapose_css = sanitise_injection(css_path.read_text()),
-        juxtapose_js = sanitise_injection(js_path.read_text()),
+        js=js,
     )
     display(HTML(html_code))
 
 
-def inject_split(image_data_urls, slider_position, wrapper_height, height) -> None:
+def inject_split(image_urls, height, config) -> None:
+    key=uuid.uuid1()
+    # inject controls id and key -> only Config remaining, not BrowserConfig for compare_view
+    # TODO: come up with better solution
+    config_parsed = json.loads(config.strip("'").strip('"'))
+    config_parsed["controls_id"] = f"controls_{key}"
+    config_parsed["key"] = str(key)
     html_code = compile_template(
         os.path.join((os.path.dirname(__file__)), "inject_split.html"),
-        rnd_str=uuid.uuid1(),
-        image_data_urls=image_data_urls,
-        slider_position=slider_position,
-        wrapper_height=wrapper_height,
+        key=key,
+        image_urls=image_urls,
         height=height,
+        config=json.dumps(config_parsed),
     )
     display(HTML(html_code))
     # ensure to include the sources every time

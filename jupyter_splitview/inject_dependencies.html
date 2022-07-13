@@ -31,10 +31,9 @@
         return document.currentScript.closest(".jp-Notebook");
     }
 
-    (function() {
+    (function () {
         let notebook = get_current_notebook();
         delete_injected_dependencies(notebook);
-        add_css("{{ juxtapose_css }}", notebook);
-        add_js("{{ juxtapose_js }}", notebook);
+        add_js("{{ js }}", notebook);
     })()
 </script>
