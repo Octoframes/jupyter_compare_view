@@ -57,7 +57,7 @@ ax2.imshow(array2)
 ## Notebook arguments
 (Might still change in future)
 * `--config '{"start_mode": "horizontal"}'` will init the compare-view in horizontal slider mode.
-* `--config '{"circle_size": "30"}'`  the circle size is now 30 pixel in circle mode.
+* `--config '{"circle_size": 30}'`  the circle size is now 30 pixel in circle mode.
 * `--config '{"show_slider": false}'` will hide the slider bar.
 * `--config '{"start_slider_pos": 0.73}'` will set the slider start position to 73%. 
 
