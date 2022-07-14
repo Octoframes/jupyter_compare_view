@@ -17,7 +17,6 @@ import jupyter_splitview
 
 ```py
 %%splity
-
 from skimage import data
 from skimage.color import rgb2gray
 import matplotlib.pyplot as plt
@@ -56,9 +55,14 @@ ax2.imshow(array2)
 
 
 ## Notebook arguments
+(Might still change in future)
+* `--config '{"start_mode": "horizontal"}'` will init the compare-view in horizontal slider mode.
+* `--config '{"circle_size": "30"}'`  the circle size is now 30 pixel in circle mode.
+* `--config '{"show_slider": false}'` will hide the slider bar.
+* `--config '{"start_slider_pos": 0.73}'` will set the slider start position to 73%. 
 
-* `--position 73%` will set the slider start position to 73%.
-*  The height of the widget. 
+    * *Removed in 0.1.1: `--position 73%` will no longer the slider start position to 73%.*
+* `--config '{"start_mode": "horizontal","start_slider_pos": 0.73}'` will both set the start mode to horizontal and set the slider position
 * `--height 220` will set the height to 220 pixel. 
 * When `--height`is not provided, the default height of the widget is 300 pixel.
 * `--height auto` will set the height by the value of the first image's resolution in vertical direction.
