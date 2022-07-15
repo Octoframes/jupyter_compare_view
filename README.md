@@ -1,18 +1,19 @@
-Jupyter Splitview
-=================
+Jupyter compare_view
+====================
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kolibril13/jupyter-splitview/HEAD?labpath=example_notebook.ipynb)
 [![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://kolibril13.github.io/jupyter-splitview/)  
 A cell magic that displays images in splitview.
+Blend Between Multiple Images using a cell magic in JupyterLab.
 
 
 ## Installation
 ```py
-pip install jupyter-splitview
+pip install jupyter_compare_view
 ```
 ## Example
 ```py
-import jupyter_splitview
+import jupyter_compare_view
 ```
 
 ```py
@@ -71,12 +72,12 @@ ax2.imshow(array2)
 ## Notebook formatting
 Formatting with black can be done this way: 
 1. `pip install 'black[jupyter]'`
-2. `black --python-cell-magics splity splitview_magic.ipynb`
+2. `black --python-cell-magics splity compare_view_magic.ipynb`
 
 
 ## Developer Installation
 
-1. `git clone --recurse https://github.com/kolibril13/jupyter-splitview`
+1. `git clone --recurse https://github.com/Octoframes/jupyter_compare_view`
 (Note: In case that the repo was already cloned e.g. with the GitHub Desktop client, the  GitHub submodule has to be loaded via `git submodule update --init --recursive`)
 2. `poetry install`
 
@@ -84,12 +85,11 @@ Formatting with black can be done this way:
 
 ## Milestones / Wishlist
 
-* Handle cases where n ≠ 2 images. Currently: All further img are ignored.
 * implement tests, find out how to test a magic class
 
 * Idea: Second option without using cell magic:
 ```python
-from splitview import Splity # (does not yet exist)
+from jupyter_compare_view import Splity # (does not yet exist)
 my_splity = Splity(left_layer=img1, right_layer=img2)
 display(my_splity)
 ```

@@ -10,7 +10,7 @@ from .inject import inject_split
 
 
 @magics_class
-class SplitViewMagic(Magics):
+class CompareViewMagic(Magics):
     @magic_arguments.magic_arguments()
     @magic_arguments.argument(
         "--position",
@@ -37,7 +37,7 @@ class SplitViewMagic(Magics):
     )
     @cell_magic
     def splity(self, line, cell):
-        """Saves the png image and calls the splitview canvas"""
+        """Saves the png image and creates the compare_view canvas"""
 
         with capture_output(stdout=False, stderr=False, display=True) as result:
             self.shell.run_cell(cell)
@@ -49,11 +49,11 @@ class SplitViewMagic(Magics):
             if "image/png" in data:
                 png_bytes_data = data["image/png"]
                 out_images_base64.append(png_bytes_data)
-        if len(out_images_base64) != 2:
-            raise ValueError("There need to be two images for jupyter_splitview to work.")
+        if len(out_images_base64) < 2:
+            raise ValueError("There need to be at least two images for Jupyter compare_view to work.")
 
         # get the parameters that configure the widget
-        args = magic_arguments.parse_argstring(SplitViewMagic.splity, line)
+        args = magic_arguments.parse_argstring(CompareViewMagic.splity, line)
 
         height = args.height
 
