@@ -3,7 +3,6 @@ Jupyter compare_view
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kolibril13/jupyter-splitview/HEAD?labpath=example_notebook.ipynb)
 [![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://kolibril13.github.io/jupyter-splitview/)  
-A cell magic that displays images in splitview.
 Blend Between Multiple Images using a cell magic in JupyterLab.
 
 
