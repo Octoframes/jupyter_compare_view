@@ -1,13 +1,11 @@
 [tool.poetry]
-name = "jupyter-splitview"
+name = "jupyter_compare_view"
 version = "0.1.1"
-description = "Making before/after image sliders in JupyterLab"
-authors = ["kolibril13 <44469195+kolibril13@users.noreply.github.com>"]
+description = "Blend Between Multiple Images in JupyterLab."
+authors = ["Octoframes"]
 license = "MIT"
-readme="README.md"
-include = [
-  "vendor/compare_view/browser_compare_view.js"
-]
+readme = "README.md"
+include = ["vendor/compare_view/browser_compare_view.js"]
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
