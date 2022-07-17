@@ -165,5 +165,5 @@ cython_debug/
 # For poetry
 *.lock
 
-splitview_env/
+compare_view_env/
 ideas/

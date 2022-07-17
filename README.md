@@ -3,14 +3,16 @@
 <p align="center">
     <br />
     <br />
-    <!---
-    <a href="https://mybinder.org/v2/gh/kolibril13/jupyter-splitview/HEAD?labpath=example_notebook.ipynb">
+    
+    <a href="https://mybinder.org/v2/gh/Octoframes/jupyter_compare_view/HEAD?labpath=example_notebook.ipynb">
         <img src="https://mybinder.org/badge_logo.svg" alt="Binder">
     </a>
-    <a href="https://kolibril13.github.io/jupyter-splitview/">
+    
+
+    <a href="https://octoframes.github.io/jupyter_compare_view/">
         <img src="https://jupyterlite.rtfd.io/en/latest/_static/badge.svg" alt="JupyterLight">
     </a>
-    --->
+
     <a href="https://github.com/Octoframes/jupyter_compare_view/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license" />
     </a>
