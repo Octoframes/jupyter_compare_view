@@ -1,26 +1,10 @@
 # Jupyter compare_view
 
-<p align="center">
-    <br />
-    <br />
-    
-    <a href="https://mybinder.org/v2/gh/Octoframes/jupyter_compare_view/HEAD?labpath=example_notebook.ipynb">
-        <img src="https://mybinder.org/badge_logo.svg" alt="Binder">
-    </a>
-    
+Blend between multiple images using a cell magic in JupyterLab.
 
-    <a href="https://octoframes.github.io/jupyter_compare_view/">
-        <img src="https://jupyterlite.rtfd.io/en/latest/_static/badge.svg" alt="JupyterLight">
-    </a>
-
-    <a href="https://github.com/Octoframes/jupyter_compare_view/blob/main/LICENSE">
-        <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license" />
-    </a>
-    <br />
-    <br />
-    <i>Blend Between Multiple Images using a cell magic in JupyterLab.</i>
-</p>
-<hr />
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Octoframes/jupyter_compare_view/HEAD?labpath=example_notebook.ipynb)
+[![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://octoframes.github.io/jupyter_compare_view)
+[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Octoframes/jupyter_compare_view/blob/main/LICENSE)
 
 ## Installation
 ```py
