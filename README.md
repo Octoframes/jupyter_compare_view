@@ -1,7 +1,7 @@
 # Jupyter compare_view
 
 Blend between multiple images using a cell magic in JupyterLab.   
-*This project was called jupyter-splitview before.*
+*This project was called jupyter-splitview before.*  
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Octoframes/jupyter_compare_view/HEAD?labpath=example_notebook.ipynb)
 [![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://octoframes.github.io/jupyter_compare_view)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Octoframes/jupyter_compare_view/blob/main/LICENSE)
