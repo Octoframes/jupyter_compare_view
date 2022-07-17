@@ -106,10 +106,15 @@ Double Round Mask, Second one with 50% opacity:
 Gaussian Mask (no priority):  
 <img src="https://user-images.githubusercontent.com/44469195/175031027-ef5da1f8-9c32-454f-aa1a-40d10eb086d6.png" style="width: 300px;"/>
 
+
+# 0.1.2
+
+* Move the repo from kolibril13/jupyter-spitview to octoframes/jupyter_compare_view 
+* Rename all references
 # 0.1.1
 
 * Drop the [github.com/NUKnightLab/juxtapose](https://github.com/NUKnightLab/juxtapose) backend and replace it with [github.com/Octoframes/compare_view](https://github.com/Octoframes/compare_view).  
-
+* Implement horizontal slider
 * Implement Round Mask
 ## 0.1.0
 
