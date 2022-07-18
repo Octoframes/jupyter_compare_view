@@ -1,12 +1,12 @@
 # Jupyter compare_view
 
-Blend between multiple images using a cell magic in JupyterLab.   
+Blend between multiple images using a cell magic in JupyterLab using [compare_view](https://github.com/Octoframes/compare_view).   
 *This project was called jupyter-splitview before.*  
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Octoframes/jupyter_compare_view/HEAD?labpath=example_notebook.ipynb)
+
 [![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://octoframes.github.io/jupyter_compare_view)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Octoframes/jupyter_compare_view/HEAD?labpath=example_notebook.ipynb)
+[![PyPI version](https://badge.fury.io/py/jupyter_compare_view.svg)](https://badge.fury.io/py/jupyter_compare_view)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Octoframes/jupyter_compare_view/blob/main/LICENSE)
-
-
 ## Installation
 ```py
 pip install jupyter_compare_view
@@ -107,15 +107,15 @@ Double Round Mask, Second one with 50% opacity:
 Gaussian Mask (no priority):  
 <img src="https://user-images.githubusercontent.com/44469195/175031027-ef5da1f8-9c32-454f-aa1a-40d10eb086d6.png" style="width: 300px;"/>
 
-# 1.0.0  (work in progress)
+## 1.0.0  (work in progress)
 
 * Rename `%%splity` to `%%compare`
 
-# 0.1.3
+## 0.1.3
 
 * octoframes github actions setup
 
-# 0.1.2
+## 0.1.2
 
 * Move the repo from kolibril13/jupyter-spitview to octoframes/jupyter_compare_view 
 * Rename all references
@@ -162,9 +162,9 @@ Fix poetry workflow
 * internal code restructuring and formatting
 * Handle import in non jupyter context
 
-### 0.0.2 
+## 0.0.2 
 * save images in base64 strings and don't load images to disk (increases package security).
-### 0.0.1
+## 0.0.1
 
 * First release
 
