@@ -1,8 +1,12 @@
 # Jupyter compare_view
+
+![bannerFINAL](https://user-images.githubusercontent.com/44469195/179508322-ea10e22a-6dfb-47f4-8fbb-d5ce724f0127.png)
+
 [![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://octoframes.github.io/jupyter_compare_view)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Octoframes/jupyter_compare_view/HEAD?labpath=example_notebook.ipynb)
 [![PyPI version](https://badge.fury.io/py/jupyter_compare_view.svg)](https://badge.fury.io/py/jupyter_compare_view)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Octoframes/jupyter_compare_view/blob/main/LICENSE)
+
 
 Blend between multiple images using a cell magic in JupyterLab using [compare_view](https://github.com/Octoframes/compare_view).   
 *This project was called jupyter-splitview before.*  
@@ -35,7 +39,7 @@ plt.axis("off")
 plt.show()
 ```
 
-<img src="https://user-images.githubusercontent.com/44469195/179499138-65160434-11e1-4358-8e25-5b26ba9ebf4a.png" style="width: 300px;"/>
+<img src="https://user-images.githubusercontent.com/44469195/179499138-65160434-11e1-4358-8e25-5b26ba9ebf4a.png" style="width: 400px;"/>
 
 Another example:
 ```py
@@ -49,7 +53,7 @@ plt.imshow(grayscale_img, cmap="gray")
 plt.axis("off")
 plt.show()
 ```
-<img src="https://user-images.githubusercontent.com/44469195/179499350-94244408-cabf-4945-affc-fd0444d53555.png" style="width: 300px;"/>
+<img src="https://user-images.githubusercontent.com/44469195/179499350-94244408-cabf-4945-affc-fd0444d53555.png" style="width: 400px;"/>
 
 
 The split view widget is still responsive after closing and reopening the notebook without running the cell again.
