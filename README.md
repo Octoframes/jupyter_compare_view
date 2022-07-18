@@ -1,12 +1,13 @@
 # Jupyter compare_view
-
-Blend between multiple images using a cell magic in JupyterLab using [compare_view](https://github.com/Octoframes/compare_view).   
-*This project was called jupyter-splitview before.*  
-
 [![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://octoframes.github.io/jupyter_compare_view)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Octoframes/jupyter_compare_view/HEAD?labpath=example_notebook.ipynb)
 [![PyPI version](https://badge.fury.io/py/jupyter_compare_view.svg)](https://badge.fury.io/py/jupyter_compare_view)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Octoframes/jupyter_compare_view/blob/main/LICENSE)
+
+Blend between multiple images using a cell magic in JupyterLab using [compare_view](https://github.com/Octoframes/compare_view).   
+*This project was called jupyter-splitview before.*  
+
+
 ## Installation
 ```py
 pip install jupyter_compare_view
@@ -17,7 +18,7 @@ import jupyter_compare_view
 ```
 
 ```py
-%%splity
+%%compare
 from skimage import data
 from skimage.color import rgb2gray
 import matplotlib.pyplot as plt
@@ -36,11 +37,9 @@ ax2.imshow(grayscale_img, cmap="gray")
 
 <img src="https://user-images.githubusercontent.com/44469195/175052654-c6c06908-746b-4bcb-819f-c81c0e8dd521.png" style="width: 300px;"/>
 
-Note: The split view widget is still responsive after closing and reopening the notebook without running the cell again.
-
 Another example:
 ```py
-%%splity --position 73% --height auto
+%%compare --position 73% --height auto
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -54,6 +53,7 @@ ax2.imshow(array2)
 ```
 <img src="https://user-images.githubusercontent.com/44469195/173763087-e76be74b-57e4-4861-ae0a-6c307021b785.png" style="width: 300px;"/>
 
+The split view widget is still responsive after closing and reopening the notebook without running the cell again.
 
 ## Notebook arguments
 (Might still change in future)
@@ -72,7 +72,7 @@ ax2.imshow(array2)
 ## Notebook formatting
 Formatting with black can be done this way: 
 1. `pip install 'black[jupyter]'`
-2. `black --python-cell-magics splity compare_view_magic.ipynb`
+2. `black --python-cell-magics compare compare_view_magic.ipynb`
 
 
 ## Developer Installation
@@ -82,30 +82,6 @@ Formatting with black can be done this way:
 2. `poetry install`
 
 ## Changelog
-
-## Milestones / Wishlist
-
-* implement tests, find out how to test a magic class
-
-* Idea: Second option without using cell magic:
-```python
-from jupyter_compare_view import Splity # (does not yet exist)
-my_splity = Splity(left_layer=img1, right_layer=img2)
-display(my_splity)
-```
-
-* Make this work also in VSCode notebooks, [see this issue](https://github.com/NUKnightLab/juxtapose/issues/178).
-
-* Some other nice views, like these:
-
-Round Mask:  
-<img src="https://user-images.githubusercontent.com/44469195/175031002-0f94c143-0145-4254-88ec-a8e450faa6af.png" style="width: 300px;"/>
-
-Double Round Mask, Second one with 50% opacity:  
-<img src="https://user-images.githubusercontent.com/44469195/175031014-81e78b3a-9e74-4d21-b516-2c5a0cc7f869.png" style="width: 300px;"/>
-
-Gaussian Mask (no priority):  
-<img src="https://user-images.githubusercontent.com/44469195/175031027-ef5da1f8-9c32-454f-aa1a-40d10eb086d6.png" style="width: 300px;"/>
 
 ## 1.0.0  (work in progress)
 
@@ -167,5 +143,3 @@ Fix poetry workflow
 ## 0.0.1
 
 * First release
-
-

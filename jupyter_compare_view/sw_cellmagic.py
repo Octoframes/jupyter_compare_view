@@ -12,11 +12,11 @@ from .inject import inject_split
 @magics_class
 class CompareViewMagic(Magics):
     @magic_arguments.magic_arguments()
-    @magic_arguments.argument(
+    @magic_arguments.argument(  # TODO This is currently not used.
         "--position",
         "-p",
         default="50%",
-        help=("The start position of the slider"),
+        help= """The start position of the slider. Currently not implemented, use `--config '{"start_slider_pos": 0.73}'` instead""",
     )
     @magic_arguments.argument(
         "--height",
@@ -36,7 +36,7 @@ class CompareViewMagic(Magics):
         ),
     )
     @cell_magic
-    def splity(self, line, cell):
+    def compare(self, line, cell): # TODO: make a %%splity deprecated version
         """Saves the png image and creates the compare_view canvas"""
 
         with capture_output(stdout=False, stderr=False, display=True) as result:
@@ -53,7 +53,7 @@ class CompareViewMagic(Magics):
             raise ValueError("There need to be at least two images for Jupyter compare_view to work.")
 
         # get the parameters that configure the widget
-        args = magic_arguments.parse_argstring(CompareViewMagic.splity, line)
+        args = magic_arguments.parse_argstring(CompareViewMagic.compare, line)
 
         height = args.height
 
@@ -72,4 +72,3 @@ class CompareViewMagic(Magics):
             # as JSON object
             config=args.config,
         )
-
