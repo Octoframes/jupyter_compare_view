@@ -35,23 +35,22 @@ plt.axis("off")
 plt.show()
 ```
 
-<img src="https://user-images.githubusercontent.com/44469195/175052654-c6c06908-746b-4bcb-819f-c81c0e8dd521.png" style="width: 300px;"/>
+<img src="https://user-images.githubusercontent.com/44469195/179499138-65160434-11e1-4358-8e25-5b26ba9ebf4a.png" style="width: 300px;"/>
 
 Another example:
 ```py
-%%compare --position 73% --height auto
+%%compare  --config '{"start_mode": "horizontal","start_slider_pos": 0.73}'
 
-import matplotlib.pyplot as plt
-import numpy as np
+plt.imshow(img)
+plt.axis("off")
+plt.show()
 
-array1 = np.full((15, 30), 10)
-array2 = np.random.randint(0, 10, size=(15, 30))
-fig, ax1 = plt.subplots(figsize=(5, 10))
-ax1.imshow(array1)
-fig, ax2 = plt.subplots(figsize=(5, 10))
-ax2.imshow(array2)
+plt.imshow(grayscale_img, cmap="gray")
+plt.axis("off")
+plt.show()
 ```
-<img src="https://user-images.githubusercontent.com/44469195/173763087-e76be74b-57e4-4861-ae0a-6c307021b785.png" style="width: 300px;"/>
+<img src="https://user-images.githubusercontent.com/44469195/179499350-94244408-cabf-4945-affc-fd0444d53555.png" style="width: 300px;"/>
+
 
 The split view widget is still responsive after closing and reopening the notebook without running the cell again.
 
