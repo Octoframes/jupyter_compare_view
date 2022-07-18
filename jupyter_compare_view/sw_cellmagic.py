@@ -5,7 +5,6 @@ from IPython.core import magic_arguments
 from IPython.core.magic import Magics, cell_magic, magics_class
 from IPython.utils.capture import capture_output
 from PIL import Image
-from black import NewLine
 
 from .inject import inject_split
 

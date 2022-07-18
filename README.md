@@ -94,6 +94,11 @@ import jupyter_compare_view
 
 ## Changelog
 
+
+## 0.1.5
+
+* BugFix: Remove black import that was added by accident. 
+
 ## 0.1.4
 
 * `%%compare`  is now `%%splity`. `%%splity` is deprecated.
