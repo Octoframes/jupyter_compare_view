@@ -18,7 +18,7 @@ import jupyter_compare_view
 ```
 
 ```py
-%%compare
+%%compare  
 from skimage import data
 from skimage.color import rgb2gray
 import matplotlib.pyplot as plt
@@ -26,13 +26,13 @@ import matplotlib.pyplot as plt
 img = data.chelsea()
 grayscale_img = rgb2gray(img)
 
-fig, ax1 = plt.subplots()
-ax1.axis("off")
-ax1.imshow(img)
+plt.imshow(img)
+plt.axis("off")
+plt.show()
 
-fig, ax2 = plt.subplots()
-ax2.axis("off")
-ax2.imshow(grayscale_img, cmap="gray")
+plt.imshow(grayscale_img, cmap="gray")
+plt.axis("off")
+plt.show()
 ```
 
 <img src="https://user-images.githubusercontent.com/44469195/175052654-c6c06908-746b-4bcb-819f-c81c0e8dd521.png" style="width: 300px;"/>
@@ -83,9 +83,10 @@ Formatting with black can be done this way:
 
 ## Changelog
 
-## 1.0.0  (work in progress)
+## 0.1.4
 
-* Rename `%%splity` to `%%compare`
+* `%%compare`  is now `%%splity`. `%%splity` is deprecated.
+* Update examples
 
 ## 0.1.3
 
@@ -95,7 +96,7 @@ Formatting with black can be done this way:
 
 * Move the repo from kolibril13/jupyter-spitview to octoframes/jupyter_compare_view 
 * Rename all references
-# 0.1.1
+## 0.1.1
 
 * Drop the [github.com/NUKnightLab/juxtapose](https://github.com/NUKnightLab/juxtapose) backend and replace it with [github.com/Octoframes/compare_view](https://github.com/Octoframes/compare_view).  
 * Implement horizontal slider
