@@ -84,6 +84,14 @@ Formatting with black can be done this way:
 (Note: In case that the repo was already cloned e.g. with the GitHub Desktop client, the  GitHub submodule has to be loaded via `git submodule update --init --recursive`)
 2. `poetry install`
 
+*Note*: The IPython extension `autoreload` reloads modules before every cell execution. Very useful when debugging the `%%capture` cell magic!
+Just add these lines into the first jupyter cell.
+```py
+%load_ext autoreload
+%autoreload 2
+import jupyter_compare_view
+```
+
 ## Changelog
 
 ## 0.1.4
