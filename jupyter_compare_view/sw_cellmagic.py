@@ -5,6 +5,7 @@ from IPython.core import magic_arguments
 from IPython.core.magic import Magics, cell_magic, magics_class
 from IPython.utils.capture import capture_output
 from PIL import Image
+from black import NewLine
 
 from .inject import inject_split
 
@@ -16,7 +17,7 @@ class CompareViewMagic(Magics):
         "--position",
         "-p",
         default="50%",
-        help= """The start position of the slider. Currently not implemented, use `--config '{"start_slider_pos": 0.73}'` instead""",
+        help="""The start position of the slider. Currently not implemented, use `--config '{"start_slider_pos": 0.73}'` instead""",
     )
     @magic_arguments.argument(
         "--height",
@@ -36,7 +37,7 @@ class CompareViewMagic(Magics):
         ),
     )
     @cell_magic
-    def compare(self, line, cell): # TODO: make a %%splity deprecated version
+    def compare(self, line, cell):  # TODO: make a %%splity deprecated version
         """Saves the png image and creates the compare_view canvas"""
 
         with capture_output(stdout=False, stderr=False, display=True) as result:
@@ -50,7 +51,9 @@ class CompareViewMagic(Magics):
                 png_bytes_data = data["image/png"]
                 out_images_base64.append(png_bytes_data)
         if len(out_images_base64) < 2:
-            raise ValueError("There need to be at least two images for Jupyter compare_view to work.")
+            raise ValueError(
+                "There need to be at least two images for Jupyter compare_view to work."
+            )
 
         # get the parameters that configure the widget
         args = magic_arguments.parse_argstring(CompareViewMagic.compare, line)
@@ -63,7 +66,9 @@ class CompareViewMagic(Magics):
             im = Image.open(io.BytesIO(imgdata))
             height = im.size[1]
 
-        image_data_urls = [f"data:image/jpeg;base64,{base64.strip()}" for base64 in out_images_base64]
+        image_data_urls = [
+            f"data:image/jpeg;base64,{base64.strip()}" for base64 in out_images_base64
+        ]
 
         # every juxtapose html node needs unique id
         inject_split(
@@ -72,3 +77,19 @@ class CompareViewMagic(Magics):
             # as JSON object
             config=args.config,
         )
+
+    @cell_magic
+    def splity(self, line, cell):  # TODO: Delete this somewhere 10/2022.
+        import warnings
+
+        print(
+            """
+**************************************************************
+Warning: %%splity is deprecated. Please use %%compare instead.
+**************************************************************
+"""
+        )
+        new_line = "%%compare"
+        new_line += line
+        complete_cell = new_line + "\n" + cell
+        self.shell.run_cell(complete_cell)
