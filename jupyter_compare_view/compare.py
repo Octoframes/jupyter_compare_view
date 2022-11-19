@@ -22,7 +22,7 @@ def img2url(img):
     if isinstance(img, str):
         return img.strip()
     if isinstance(img, bytes):
-        data = base64.b64encode(img)
+        data = str(base64.b64encode(img), 'utf8')
     else:
         data = str(img2base64(img).strip(), 'utf8')
     return f"data:image/jpeg;base64,{data}"
