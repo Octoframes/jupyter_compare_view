@@ -46,7 +46,6 @@ class CompareViewMagic(Magics):
         out_images_base64 = []
         for output in result.outputs:
             data = output.data
-            import pdb; pdb.set_trace()
             if "image/png" in data:
                 png_bytes_data = data["image/png"]
                 out_images_base64.append(png_bytes_data)
