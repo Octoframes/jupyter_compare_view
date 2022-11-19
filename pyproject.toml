@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jupyter_compare_view"
-version = "0.1.5"
+version = "0.1.6"
 description = "Blend Between Multiple Images in JupyterLab."
 authors = ["Octoframes"]
 license = "MIT"
@@ -8,11 +8,11 @@ readme = "README.md"
 include = ["vendor/compare_view/browser_compare_view.js"]
 
 [tool.poetry.dependencies]
-python = ">=3.8,<3.11"
+python = ">=3.7,<3.11"
 ipython = ">=6.0.0"
 ipykernel = ">=5.0.0"
-Pillow = ">=9.1.0"
-Jinja2 = ">=3.1.2"
+Pillow = ">=7.1.2"
+Jinja2 = ">=2.11.3"
 
 [tool.poetry.dev-dependencies]
 black = { extras = ["jupyter"], version = ">=22.3.0" }
