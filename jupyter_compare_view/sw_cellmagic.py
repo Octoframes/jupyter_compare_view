@@ -57,13 +57,10 @@ class CompareViewMagic(Magics):
 
         # get the parameters that configure the widget
         args = magic_arguments.parse_argstring(CompareViewMagic.compare, line)
-
         height = args.height
 
-        image_data_urls = [str(base64.strip(), 'utf8') for base64 in out_images_base64]
-
         return compare(
-            images=image_data_urls,
+            images=out_images_base64,
             **{
                 **json.loads(args.config),
                 "height": height if height == "auto" else int(height)
