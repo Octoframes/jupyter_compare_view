@@ -70,7 +70,7 @@ def compare(
     # rate_function: str = 'ease_in_out_cubic',
     start_slider_pos: float = 0.5,
     show_slider: bool = True,
-) -> :
+) -> IPython.display.HTML:
     """
     Args:
         add_controls: pass False to not create controls
