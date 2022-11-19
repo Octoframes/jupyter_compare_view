@@ -59,9 +59,7 @@ class CompareViewMagic(Magics):
 
         height = args.height
 
-        image_data_urls = [
-            f"data:image/jpeg;base64,{base64.strip()}" for base64 in out_images_base64
-        ]
+        image_data_urls = [str(base64.strip()) for base64 in out_images_base64]
 
         return compare(
             images=image_data_urls,
