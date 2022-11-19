@@ -63,7 +63,7 @@ class CompareViewMagic(Magics):
             f"data:image/jpeg;base64,{base64.strip()}" for base64 in out_images_base64
         ]
 
-        compare(
+        return compare(
             images=image_data_urls,
             **{
                 **json.loads(args.config),
