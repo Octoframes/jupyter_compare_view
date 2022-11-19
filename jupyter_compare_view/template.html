@@ -1,7 +1,12 @@
+<script>
+    {{ js }}
+</script>
+
 <div style="display: flex; flex-direction: row; width: 100%;">
-    <canvas id="canvas_{{ key }}" style="height: {{ height }}px;"></canvas>
-    <div id="controls_{{ key }}" style="width: auto; margin-right: 10px;">
-    </div>
+    <canvas id="canvas_{{ uid }}" style="height: {{ height }};"></canvas>
+    {% if add_controls %}
+        <div id="controls_{{ uid }}" style="width: auto; margin-right: 10px;"></div>
+    {% endif %}
 </div>
 
 <script>
@@ -9,7 +14,7 @@
         [{% for image_url in image_urls %}
     "{{ image_url }}",
         {% endfor %}],
-    "canvas_{{ key }}",
+    "canvas_{{ uid }}",
         {{config}}
     );
 </script>
