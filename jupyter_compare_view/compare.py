@@ -19,9 +19,13 @@ def img2base64(img):
 
 
 def img2url(img):
-    if not isinstance(img, str):
-        return f"data:image/jpeg;base64,{str(img2base64(img).strip(), 'utf8')}"
-    return img.strip()
+    if isinstance(img, str):
+        return img.strip()
+    if isinstance(img, bytes):
+        data = base64.b64encode(img)
+    else:
+        data = str(img2base64(img).strip(), 'utf8')
+    return f"data:image/jpeg;base64,{data}"
 
 
 def compile_template(in_file: str, **variables) -> str:
