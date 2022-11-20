@@ -2,7 +2,7 @@ from .sw_cellmagic import CompareViewMagic
 from IPython import get_ipython
 import pkg_resources
 
-from .inject import inject_dependencies
+from .compare import inject_dependencies
 
 __version__: str = pkg_resources.get_distribution(__name__).version
 
