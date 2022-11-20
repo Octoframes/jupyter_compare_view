@@ -36,7 +36,7 @@ def inject_split(image_urls, height, config) -> None:
     config_parsed["controls_id"] = f"controls_{key}"
     config_parsed["key"] = str(key)
     html_code = compile_template(
-        os.path.join((os.path.dirname(__file__)), "inject_split.html"),
+        os.path.join((os.path.dirname(__file__)), "template.html"),
         key=key,
         image_urls=image_urls,
         height=height,
