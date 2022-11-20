@@ -7,25 +7,32 @@ import uuid
 from pathlib import Path
 from jinja2 import Template, StrictUndefined
 import IPython
+import PIL
 
 
-def img2base64(img):
-    import matplotlib.pyplot as plt
-    
+ImageLike = typing.TypeVar('ImageLike')
+
+
+def img2bytes(img: ImageLike, format: str = 'jpeg') -> bytes:
     im_file = io.BytesIO()
-    plt.imsave(im_file, img, format='jpeg')
-    im_bytes = im_file.getvalue()
-    return base64.b64encode(im_bytes)
+    if isinstance(img, PIL.Image.Image):
+        img.save(im_file, format=format)
+    else:
+        # anything other that can be displayed with plt.imshow
+        import matplotlib.pyplot as plt
+        
+        plt.imsave(im_file, img, format=format)
+    return im_file.getvalue()
 
 
-def img2url(img):
+def img2url(img: typing.Union[str, bytes, ImageLike]) -> str:
     if isinstance(img, str):
         return img.strip()
     if isinstance(img, bytes):
-        data = str(base64.b64encode(img), 'utf8')
+        data = img
     else:
-        data = str(img2base64(img).strip(), 'utf8')
-    return f"data:image/jpeg;base64,{data}"
+        data = img2bytes(img)
+    return f"data:image/jpeg;base64,{str(base64.b64encode(data), 'utf8')}"
 
 
 def compile_template(in_file: str, **variables) -> str:
@@ -61,7 +68,7 @@ class StartMode(str, enum.Enum):
 
 
 def compare(
-    images: typing.List[str],
+    images: typing.List[typing.Union[str, bytes, ImageLike]],
     height: typing.Union[str, int] ='auto',
     add_controls: bool = True,
     start_mode: typing.Union[StartMode, str] = StartMode.CIRCLE,
