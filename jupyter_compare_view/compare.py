@@ -72,7 +72,7 @@ def compare(
     image1: ImageSource,
     image2: ImageSource,
     *other_images: ImageSource,
-    height: typing.Union[str, int] ='auto',
+    height: typing.Union[str, int] = 'auto',
     add_controls: bool = True,
     start_mode: typing.Union[StartMode, str] = StartMode.CIRCLE,
     circumference_fraction: float = 0.005,
