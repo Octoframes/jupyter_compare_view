@@ -1,6 +1,6 @@
 from IPython import get_ipython
 import pkg_resources
-from .compare import compare, StartMode, img2url
+from .compare import compare, StartMode
 from .sw_cellmagic import CompareViewMagic
 
 __version__: str = pkg_resources.get_distribution(__name__).version
