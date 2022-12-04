@@ -11,7 +11,7 @@ import PIL
 
 
 ImageLike = typing.TypeVar('ImageLike')
-ImageSource = typing.TypeVar('ImageSource', str, bytes, ImageLike)
+ImageSource = typing.Union[str, bytes, ImageLike]
 
 
 def img2bytes(img: ImageLike, format: str, cmap: str) -> bytes:
