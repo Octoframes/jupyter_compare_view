@@ -61,7 +61,7 @@ class CompareViewMagic(Magics):
         return compare(
             *out_images_base64,
             **{
-                **json.loads(args.config),
+                **json.loads(args.config.strip("'").strip('"')),
                 "height": height if height == "auto" else int(height)
             }
         )
