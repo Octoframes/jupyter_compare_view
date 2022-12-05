@@ -33,7 +33,7 @@ def img2url(img: ImageSource, format: str, cmap: str) -> str:
         data = img
     else:
         data = img2bytes(img, format=format, cmap=cmap)
-    return f"data:image/jpeg;base64,{str(base64.b64encode(data), 'utf8')}"
+    return f"data:image/{format};base64,{str(base64.b64encode(data), 'utf8')}"
 
 
 def compile_template(in_file: str, **variables) -> str:

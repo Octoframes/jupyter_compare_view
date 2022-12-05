@@ -48,6 +48,8 @@ class CompareViewMagic(Magics):
             data = output.data
             if "image/png" in data:
                 png_bytes_data = data["image/png"]
+                if isinstance(png_bytes_data, str):
+                    png_bytes_data = f'data:image/png;base64,{png_bytes_data}'
                 out_images_base64.append(png_bytes_data)
         if len(out_images_base64) < 2:
             raise ValueError(
