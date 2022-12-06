@@ -15,15 +15,15 @@ ImageSource = typing.Union[str, bytes, ImageLike]
 
 
 def img2bytes(img: ImageLike, format: str, cmap: str) -> bytes:
-    im_file = io.BytesIO()
-    if isinstance(img, PIL.Image.Image):
-        img.save(im_file, format=format)
-    else:
-        # anything other that can be displayed with plt.imshow
-        import matplotlib.pyplot as plt
-        
-        plt.imsave(im_file, img, format=format, cmap=cmap)
-    return im_file.getvalue()
+    with io.BytesIO() as im_file:
+        if isinstance(img, PIL.Image.Image):
+            img.save(im_file, format=format)
+        else:
+            # anything other that can be displayed with plt.imshow
+            import matplotlib.pyplot as plt
+
+            plt.imsave(im_file, img, format=format, cmap=cmap)
+        return im_file.getvalue()
 
 
 def img2url(img: ImageSource, format: str, cmap: str) -> str:
@@ -64,7 +64,7 @@ def prepare_html(image_urls: typing.List[str], height: str, add_controls: bool, 
 @enum.unique
 class StartMode(str, enum.Enum):
     CIRCLE = "circle"
-    HORIZONTAL = "horizonal"
+    HORIZONTAL = "horizontal"
     VERTICAL = "vertical"
 
 
@@ -90,8 +90,9 @@ def compare(
 ) -> IPython.display.HTML:
     """
     Args:
+        height: height of the widget in pixels or "auto"
         add_controls: pass False to not create controls
-        start_mode: either "circle", "horizonal" or "vertical"
+        start_mode: either "circle", "horizontal" or "vertical"
         circumference_fraction: size of circle outline as fraction of image width or height (whatever is bigger)
         circle_size: the radius in pixel
         circle_fraction: a fraction of the image width or height (whichever is bigger—called max_size in this document)
@@ -99,6 +100,8 @@ def compare(
         slider_time: time slider takes to reach clicked location
         start_slider_pos: 0.0 -> left; 1.0 -> right
         show_slider: draw line at slider
+        display_format: format used for displaying images
+        cmap: colormap for grayscale images
     """
     images = [image1, image2, *other_images]
     image_urls = [
