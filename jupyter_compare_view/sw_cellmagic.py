@@ -1,12 +1,12 @@
 import io
-from base64 import b64decode
+import json
 
 from IPython.core import magic_arguments
 from IPython.core.magic import Magics, cell_magic, magics_class
 from IPython.utils.capture import capture_output
 from PIL import Image
 
-from .compare import inject_split
+from .compare import compare
 
 
 @magics_class
@@ -48,6 +48,8 @@ class CompareViewMagic(Magics):
             data = output.data
             if "image/png" in data:
                 png_bytes_data = data["image/png"]
+                if isinstance(png_bytes_data, str):
+                    png_bytes_data = f'data:image/png;base64,{png_bytes_data}'
                 out_images_base64.append(png_bytes_data)
         if len(out_images_base64) < 2:
             raise ValueError(
@@ -56,25 +58,14 @@ class CompareViewMagic(Magics):
 
         # get the parameters that configure the widget
         args = magic_arguments.parse_argstring(CompareViewMagic.compare, line)
-
         height = args.height
 
-        if height == "auto":
-            imgdata = b64decode(out_images_base64[0])
-            # maybe possible without the PIL dependency?
-            im = Image.open(io.BytesIO(imgdata))
-            height = im.size[1]
-
-        image_data_urls = [
-            f"data:image/jpeg;base64,{base64.strip()}" for base64 in out_images_base64
-        ]
-
-        # every juxtapose html node needs unique id
-        inject_split(
-            image_urls=image_data_urls,
-            height=height,
-            # as JSON object
-            config=args.config,
+        return compare(
+            *out_images_base64,
+            **{
+                **json.loads(args.config.strip("'").strip('"')),
+                "height": height if height == "auto" else int(height)
+            }
         )
 
     @cell_magic

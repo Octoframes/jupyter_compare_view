@@ -4,6 +4,7 @@
 
 [![JupyterLight](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://octoframes.github.io/jupyter_compare_view)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Octoframes/jupyter_compare_view/HEAD?labpath=example_notebook.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Octoframes/jupyter_compare_view/blob/main/example_notebook.ipynb)
 [![PyPI version](https://badge.fury.io/py/jupyter_compare_view.svg)](https://badge.fury.io/py/jupyter_compare_view)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Octoframes/jupyter_compare_view/blob/main/LICENSE)
 
