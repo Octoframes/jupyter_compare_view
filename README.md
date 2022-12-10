@@ -44,15 +44,9 @@ plt.show()
 
 Another example:
 ```py
-%%compare  --config '{"start_mode": "horizontal","start_slider_pos": 0.73}'
+from jupyter_compare_view import compare
 
-plt.imshow(img)
-plt.axis("off")
-plt.show()
-
-plt.imshow(grayscale_img, cmap="gray")
-plt.axis("off")
-plt.show()
+compare(img, grayscale_img, cmap="gray", start_mode="horizontal", start_slider_pos=0.73)
 ```
 <img src="https://user-images.githubusercontent.com/44469195/179499350-94244408-cabf-4945-affc-fd0444d53555.png" style="width: 400px;"/>
 
