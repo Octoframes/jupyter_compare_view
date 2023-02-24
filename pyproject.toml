@@ -8,7 +8,7 @@ readme = "README.md"
 include = ["vendor/compare_view/browser_compare_view.js"]
 
 [tool.poetry.dependencies]
-python = ">=3.7,<3.11"
+python = ">=3.7,<3.13"
 ipython = ">=6.0.0"
 ipykernel = ">=5.0.0"
 Pillow = ">=7.1.2"
