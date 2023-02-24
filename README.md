@@ -90,6 +90,10 @@ import jupyter_compare_view
 ## Changelog
 
 
+## 0.2.1
+
+* Support python 3.11
+
 ## 0.2.0
 
 * Implemented `capture` to display the compare view frame without calling the cell magic. This is not an ipywidget as mentioned [here](https://github.com/Octoframes/jupyter_compare_view/pull/41#pullrequestreview-1205327074). 
