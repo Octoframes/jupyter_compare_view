@@ -90,6 +90,10 @@ import jupyter_compare_view
 ## Changelog
 
 
+## 0.2.2
+
+* Remove python3.7 support [#46](https://github.com/Octoframes/jupyter_compare_view/pull/46)
+* fix jupyterlite example
 ## 0.2.1
 
 * Support python 3.11

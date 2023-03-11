@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jupyter_compare_view"
-version = "0.2.1"
+version = "0.2.2"
 description = "Blend Between Multiple Images in JupyterLab."
 authors = ["Octoframes"]
 license = "MIT"
