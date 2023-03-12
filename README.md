@@ -90,6 +90,9 @@ import jupyter_compare_view
 ## Changelog
 
 
+## 0.2.3
+
+Remove setuptools dependency
 ## 0.2.2
 
 * Remove python3.7 support [#46](https://github.com/Octoframes/jupyter_compare_view/pull/46)
