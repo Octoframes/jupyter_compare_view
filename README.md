@@ -89,6 +89,9 @@ import jupyter_compare_view
 
 ## Changelog
 
+# 0.2.4
+
+CHange to importlib [#48](https://github.com/Octoframes/jupyter_compare_view/pull/48)
 
 ## 0.2.3
 
