@@ -4,18 +4,20 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
+  pull_request:
+    branches:
+      - '*'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.9
+          python-version: '3.10'
       - name: Install the dependencies
         run: |
           python -m pip install -r .jupyterlite/requirements.txt
@@ -24,25 +26,26 @@ jobs:
           mkdir -p content
           cp README.md content
           cp example_notebook.ipynb content
-          jupyter lite build --contents ./content
-      - name: Upload (dist)
-        uses: actions/upload-artifact@v2
+
+          jupyter lite build --contents content --output-dir dist
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: jupyterlite-demo-dist-${{ github.run_number }}
-          path: ./_output
+          path: ./dist
 
   deploy:
-    needs: [build]
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2.3.1
-      - uses: actions/download-artifact@v2
-        with:
-          name: jupyterlite-demo-dist-${{ github.run_number }}
-          path: ./dist
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.3
-        with:
-          branch: gh-pages
-          folder: dist
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
