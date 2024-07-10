@@ -9,7 +9,7 @@
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Octoframes/jupyter_compare_view/blob/main/LICENSE)
 
 
-Blend between multiple images using a cell magic in JupyterLab using [compare_view](https://github.com/Octoframes/compare_view).   
+Blend between multiple images using a cell magic in JupyterLab using [compare_view](https://octoframes.github.io/compare_view).   
 *This project was called jupyter-splitview before.*  
 
 
@@ -71,6 +71,13 @@ The split view widget is still responsive after closing and reopening the notebo
 Formatting with black can be done this way: 
 1. `pip install 'black[jupyter]'`
 2. `black --python-cell-magics compare compare_view_magic.ipynb`
+
+## Interactive Export
+jupyter_compare_view fully supports offline interactive HTML exports.
+The web library [compare_view](https://octoframes.github.io/compare_view) is inlined into the exported HTML document.
+Therefore, the export is viewable without an internet connection.
+
+![Simply export your notebook as HTML to allow interacting with your data without jupyter.](html_export_screenshot.png)
 
 
 ## Developer Installation
