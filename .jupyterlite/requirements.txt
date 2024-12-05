@@ -8,7 +8,7 @@ jupyterlite==0.1.0rc0
 
 #------ JupyerLab install -------
 ipywidgets>=7.7,<8
-jupyterlab~=3.3.0
+jupyterlab>=3.6.7
 jupyterlab-language-pack-fr-FR
 jupyterlab-language-pack-zh-CN
 
