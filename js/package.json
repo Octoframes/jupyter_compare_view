@@ -1,0 +1,32 @@
+// dublicate of https://github.com/Octoframes/compare_view/blob/main/package.json
+{
+    "name": "compare_view",
+    "version": "1.3.4",
+    "description": "Blend Between Muliple Images.",
+    "repository": "https://github.com/Octoframes/compare_view",
+    "author": "Octoframes",
+    "license": "MIT",
+    "main": "public/dist/component_compare_view.js",
+    "types": "public/dist/types/component/compare_view.d.ts",
+    "files": [
+        "public/dist"
+    ],
+    "scripts": {
+        "develop": "webpack serve",
+        "build_deploy": "webpack --env production && webpack --env production --env component",
+        "build_release": "yarn run build_deploy",
+        "build_debug": "webpack --env development"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.15",
+        "@types/react-dom": "^18.0.6",
+        "ts-loader": "^9.3.1",
+        "typescript": "^4.7.4",
+        "webpack": "^5.73.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-dev-server": "^4.9.2"
+    },
+    "dependencies": {
+        "react": "^18.2.0"
+    }
+}
