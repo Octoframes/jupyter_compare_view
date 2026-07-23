@@ -12,6 +12,3 @@ ipywidgets>=8.1.8
 jupyterlab>=4.6.2
 jupyterlab-language-pack-fr-FR>=4.5.post3
 jupyterlab-language-pack-zh-CN>=4.5.post3
-
-#------- Demo install -------
-# Reuse .binder/requirements.txt
