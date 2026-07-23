@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jupyter_compare_view"
-version = "0.2.5"
+version = "0.3.0"
 description = "Blend Between Multiple Images in JupyterLab."
 authors = ["Octoframes"]
 license = "MIT"
@@ -8,20 +8,25 @@ readme = "README.md"
 include = ["vendor/compare_view/browser_compare_view.js"]
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.14"
-ipython = ">=6.0.0"
-ipykernel = ">=5.0.0"
-Pillow = ">=7.1.2"
-Jinja2 = ">=2.11.3"
+python = ">=3.12,<3.14"
+ipython = ">=9.15.0"
+ipykernel = ">=7.3.0"
+Pillow = ">=12.3.0"
+Jinja2 = ">=3.1.6"
 
 [tool.poetry.dev-dependencies]
-black = { extras = ["jupyter"], version = ">=22.3.0" }
-matplotlib = ">=3.5.1"
-scipy = ">=1.8.0"
-scikit-image = ">=0.19.2"
-pytest = ">=7.1.2"
-isort = ">=5.10.1"
-jupyterlab = ">=4.5.9"
+black = { extras = ["jupyter"], version = ">=26.5.1" }
+matplotlib = ">=3.11.1"
+scipy = ">=1.18.0"
+scikit-image = ">=0.26.0"
+pytest = ">=9.1.1"
+isort = ">=8.0.1"
+jupyterlab = ">=4.6.2"
+jupyter-server = ">=2.20.0"
+urllib3 = ">=2.7.0"
+bleach = ">=6.4.0"
+requests = ">=2.34.2"
+setuptools = ">=83.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

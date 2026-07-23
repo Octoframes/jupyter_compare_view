@@ -1,5 +1,5 @@
 .
-Pillow
-numpy
-matplotlib
-scikit-image
+Pillow>=12.3.0
+numpy>=2.5.1
+matplotlib>=3.11.1
+scikit-image>=0.26.0
