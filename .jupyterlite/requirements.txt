@@ -5,6 +5,7 @@ scikit-image>=0.26.0
 
 #------ JupyerLite install -------
 jupyterlite>=0.8.1
+jupyterlite-pyodide-kernel>=0.8.2
 
 #------ JupyerLab install -------
 ipywidgets>=8.1.8
